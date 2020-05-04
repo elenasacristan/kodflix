@@ -3,14 +3,18 @@
 }
 
 img {
-  width: 100%;
+  width: 33%;
 }
 
 .container {
   display: flex;
+  margin-bottom: -6px;
 }
 
 .item {
   flex: 1;
-  /* margin: 30px; */
+}
+
+.item img{
+  width:100%;
 }
