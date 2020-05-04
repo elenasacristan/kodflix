@@ -1,24 +1,42 @@
 import React from "react";
-import logo from "./logo.svg";
+import ET from "./et.jpg";
+import Ozark from "./ozark.jpg";
+import TigerKing from "./tigerking.jpg";
+import MoneyHeist from "./MoneyHeist.jpg";
+import Got from "./got.jpg";
+import BreakingBad from "./breakingbad.jpg";
+import Narcos from "./narcos.jpg";
+
+
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          <h1>Welcome to Kodflix!</h1>
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <img src={ET} alt="ET movie" />
+      <br /> <br /> <br /> <br />
+      <div className="container">
+        <div className="item">
+          <img src={Ozark} alt="ET movie" />
+        </div>
+        <div className="item">
+        <img src={TigerKing} alt="ET movie" />
+        </div>
+        <div className="item">
+        <img src={MoneyHeist} alt="ET movie" />
+        </div>
+      </div>
+      <div className="container">
+        <div className="item">
+        <img src={Got} alt="ET movie" />
+        </div>
+        <div className="item">
+        <img src={BreakingBad} alt="ET movie" />
+        </div>
+        <div className="item">
+        <img src={Narcos} alt="ET movie" />
+        </div>
+      </div>
     </div>
   );
 }
