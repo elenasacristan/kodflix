@@ -15,6 +15,14 @@ img {
   flex: 1;
 }
 
-.item img{
-  width:100%;
+.item img {
+  width: 100%;
+}
+
+/* for small screens */
+
+@media only screen and (max-width: 600px) {
+  .container {
+    flex-direction: column;
+  }
 }
