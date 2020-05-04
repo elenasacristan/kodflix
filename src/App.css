@@ -8,15 +8,32 @@ img {
 
 .container {
   display: flex;
-  margin-bottom: -6px;
 }
 
 .item {
+  position: relative;
   flex: 1;
 }
 
-.item img {
+.item .overlay-title {
+  position: absolute;
+  bottom: 0;
+  margin: 0;
   width: 100%;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  z-index: -1
+}
+
+.item:hover .overlay-title {
+  z-index: 2;
+}
+
+.item img {
+  position: relative;
+  width: 100%;
+  margin-bottom: -5px;
 }
 
 /* for small screens */

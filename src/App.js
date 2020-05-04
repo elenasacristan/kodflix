@@ -17,23 +17,41 @@ function App() {
       <div className="container">
         <div className="item">
           <img src={Ozark} alt="Ozark cover" />
+          <div className="overlay-title">
+            <h2>Ozark</h2>
+          </div>
         </div>
         <div className="item">
           <img src={TigerKing} alt="Tiger King cover" />
+          <div className="overlay-title">
+            <h2>Tiger King</h2>
+          </div>
         </div>
         <div className="item">
           <img src={MoneyHeist} alt="MoneyHeist cover" />
+          <div className="overlay-title">
+            <h2>Money Heist</h2>
+          </div>
         </div>
       </div>
       <div className="container">
         <div className="item">
           <img src={Got} alt="G.O.T cover" />
+          <div className="overlay-title">
+            <h2>Game of Thrones</h2>
+          </div>
         </div>
         <div className="item">
           <img src={BreakingBad} alt="Breaking Bad cover" />
+          <div className="overlay-title">
+            <h2>Breaking Bad</h2>
+          </div>
         </div>
         <div className="item">
           <img src={Narcos} alt="Narcos cover" />
+          <div className="overlay-title">
+            <h2>Narcos</h2>
+          </div>
         </div>
       </div>
     </div>
