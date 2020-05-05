@@ -1,58 +1,28 @@
 import React from "react";
-import Et from "./images/et.jpg";
-import Ozark from "./images/ozark.jpg";
-import TigerKing from "./images/tigerking.jpg";
-import MoneyHeist from "./images/MoneyHeist.jpg";
-import Got from "./images/got.jpg";
-import BreakingBad from "./images/breakingbad.jpg";
-import Narcos from "./images/narcos.jpg";
-
+import et from "./images/et.jpg";
+import ozark from "./images/ozark.jpg";
+import tigerKing from "./images/tigerking.jpg";
+import moneyHeist from "./images/MoneyHeist.jpg";
+import got from "./images/got.jpg";
+import breakingBad from "./images/breakingbad.jpg";
+import narcos from "./images/narcos.jpg";
+import TvShow from "./components/TvShow";
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <img src={Et} alt="ET movie" />
+      <img src={et} alt="ET movie" />
       <br /> <br /> <br /> <br />
       <div className="container">
-        <div className="item">
-          <img src={Ozark} alt="Ozark cover" />
-          <div className="overlay-title">
-            <h2>Ozark</h2>
-          </div>
-        </div>
-        <div className="item">
-          <img src={TigerKing} alt="Tiger King cover" />
-          <div className="overlay-title">
-            <h2>Tiger King</h2>
-          </div>
-        </div>
-        <div className="item">
-          <img src={MoneyHeist} alt="MoneyHeist cover" />
-          <div className="overlay-title">
-            <h2>Money Heist</h2>
-          </div>
-        </div>
+        <TvShow title="Ozark" picture={ozark} />
+        <TvShow title="Tiger King" picture={tigerKing} />
+        <TvShow title="Money Heist" picture={moneyHeist} />
       </div>
       <div className="container">
-        <div className="item">
-          <img src={Got} alt="G.O.T cover" />
-          <div className="overlay-title">
-            <h2>Game of Thrones</h2>
-          </div>
-        </div>
-        <div className="item">
-          <img src={BreakingBad} alt="Breaking Bad cover" />
-          <div className="overlay-title">
-            <h2>Breaking Bad</h2>
-          </div>
-        </div>
-        <div className="item">
-          <img src={Narcos} alt="Narcos cover" />
-          <div className="overlay-title">
-            <h2>Narcos</h2>
-          </div>
-        </div>
+        <TvShow title="Game of Thrones" picture={got} />
+        <TvShow title="Breaking Bad" picture={breakingBad} />
+        <TvShow title="Narcos" picture={narcos} />
       </div>
     </div>
   );
