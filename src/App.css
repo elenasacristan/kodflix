@@ -20,14 +20,15 @@ img {
   bottom: 0;
   margin: 0;
   width: 100%;
-  text-align: center;
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
-  z-index: -1
+  height: 0px;
+  transition: height 1s cubic-bezier(0.67, 0.21, 0.74, 1.31);
+  ;
 }
 
 .item:hover .overlay-title {
-  z-index: 2;
+  height: 90px;
 }
 
 .item img {
@@ -37,7 +38,6 @@ img {
 }
 
 /* for small screens */
-
 @media only screen and (max-width: 600px) {
   .container {
     flex-direction: column;
