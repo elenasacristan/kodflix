@@ -12,8 +12,6 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
-      <img src={et} alt="ET movie" />
-      <br /> <br /> <br /> <br />
       <div className="container">
         <TvShow title="Ozark" picture={ozark} />
         <TvShow title="Tiger King" picture={tigerKing} />
