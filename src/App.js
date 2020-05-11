@@ -1,28 +1,17 @@
 import React from "react";
-import et from "./images/et.jpg";
-import ozark from "./images/ozark.jpg";
-import tigerKing from "./images/tigerking.jpg";
-import moneyHeist from "./images/MoneyHeist.jpg";
-import got from "./images/got.jpg";
-import breakingBad from "./images/breakingbad.jpg";
-import narcos from "./images/narcos.jpg";
-import TvShow from "./components/TvShow";
+import GalleryShows from "./GalleryShows/GalleryShows.js";
 import "./App.css";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Details from "./Details/Details.js";
 
 function App() {
   return (
-    <div className="App">
-      <div className="container">
-        <TvShow title="Ozark" picture={ozark} />
-        <TvShow title="Tiger King" picture={tigerKing} />
-        <TvShow title="Money Heist" picture={moneyHeist} />
+    <Router>
+      <div className="App">
+        <Route exact path="/" component={GalleryShows} />
+        <Route exact path="/details" component={Details} />
       </div>
-      <div className="container">
-        <TvShow title="Game of Thrones" picture={got} />
-        <TvShow title="Breaking Bad" picture={breakingBad} />
-        <TvShow title="Narcos" picture={narcos} />
-      </div>
-    </div>
+    </Router>
   );
 }
 
