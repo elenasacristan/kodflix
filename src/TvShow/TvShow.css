@@ -1,36 +1,36 @@
 .link-movie {
-    flex: 1;
-    margin: 1.5%;
+  flex: 1;
+  margin: 1.5%;
 }
 
 .link-movie .item {
-    position: relative;
-    overflow: hidden;
+  position: relative;
+  overflow: hidden;
 }
 
 .link-movie .item img {
-    position: relative;
-    box-shadow: 2px 2px 5px 1px #787878;
-    border-radius: 10px;
-    width: 350px;
+  position: relative;
+  box-shadow: 2px 2px 5px 1px #787878;
+  border-radius: 10px;
+  width: 350px;
 }
 
 .link-movie .item .overlay-title {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: 0px auto 4px;
-    width: 350px;
-    background-color: rgba(0, 0, 0, 0.6);
-    border-radius: 10px;
-    color: transparent;
-    height: 0px;
-    margin-bottom: 5px;
-    transition: height 1s cubic-bezier(0.67, 0.21, 0.74, 1.31), color 1s;
+  position: absolute;
+  bottom: -100px;
+  left: 0;
+  right: 0;
+  margin: 0px auto 4px;
+  width: 350px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  color: transparent;
+  margin-bottom: 0px;
+  transition: bottom 1s cubic-bezier(0.79, 0.31, 0.56, 1.31), color 1s ease-in-out;
 }
 
 .link-movie .item:hover .overlay-title {
-    height: 90px;
-    color: white;
+  bottom: 0px;
+  color: white;
+  margin-bottom: 10px;
 }
