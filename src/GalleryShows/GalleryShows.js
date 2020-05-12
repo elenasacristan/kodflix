@@ -13,14 +13,14 @@ export default function GalleryShows() {
     <div className="GalleryShows">
       <h1>My Series</h1>
       <div className="container">
-        <TvShow title="Ozark" picture={ozark} />
-        <TvShow title="Tiger King" picture={tigerKing} />
-        <TvShow title="Money Heist" picture={moneyHeist} />
+        <TvShow id="Ozark" title="Ozark" picture={ozark} />
+        <TvShow id="Tiger_King" title="Tiger King" picture={tigerKing} />
+        <TvShow id="Money_Heist" title="Money Heist" picture={moneyHeist} />
       </div>
       <div className="container">
-        <TvShow title="Game of Thrones" picture={got} />
-        <TvShow title="Breaking Bad" picture={breakingBad} />
-        <TvShow title="Narcos" picture={narcos} />
+        <TvShow id="Game_of_Thrones" title="Game of Thrones" picture={got} />
+        <TvShow id="Breaking_Bad" title="Breaking Bad" picture={breakingBad} />
+        <TvShow id="Narcos" title="Narcos" picture={narcos} />
       </div>
     </div>
   );
