@@ -6,29 +6,31 @@
 .link-movie .item {
     position: relative;
     overflow: hidden;
-    border-radius: 3%;
-    box-shadow: 1px 1px 8px 2px #787878;
 }
 
 .link-movie .item img {
     position: relative;
-    width: 100%;
-    margin-bottom: -6px;
+    box-shadow: 2px 2px 5px 1px #787878;
+    border-radius: 10px;
+    width: 350px;
 }
 
 .link-movie .item .overlay-title {
     position: absolute;
     bottom: 0;
-    margin: 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
+    left: 0;
+    right: 0;
+    margin: 0px auto 4px;
+    width: 350px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    color: transparent;
     height: 0px;
-    transition: height 1s cubic-bezier(0.67, 0.21, 0.74, 1.31);
-    ;
+    margin-bottom: 5px;
+    transition: height 1s cubic-bezier(0.67, 0.21, 0.74, 1.31), color 1s;
 }
 
 .link-movie .item:hover .overlay-title {
     height: 90px;
+    color: white;
 }
-

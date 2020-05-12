@@ -16,8 +16,6 @@ export default function GalleryShows() {
         <TvShow id="Ozark" title="Ozark" picture={ozark} />
         <TvShow id="Tiger_King" title="Tiger King" picture={tigerKing} />
         <TvShow id="Money_Heist" title="Money Heist" picture={moneyHeist} />
-      </div>
-      <div className="container">
         <TvShow id="Game_of_Thrones" title="Game of Thrones" picture={got} />
         <TvShow id="Breaking_Bad" title="Breaking Bad" picture={breakingBad} />
         <TvShow id="Narcos" title="Narcos" picture={narcos} />
