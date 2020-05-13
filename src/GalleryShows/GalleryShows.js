@@ -1,24 +1,21 @@
 import React from "react";
-import ozark from "../images/ozark.jpg";
-import tigerKing from "../images/tigerking.jpg";
-import moneyHeist from "../images/MoneyHeist.jpg";
-import got from "../images/got.jpg";
-import breakingBad from "../images/breakingbad.jpg";
-import narcos from "../images/narcos.jpg";
-import TvShow from "../TvShow/TvShow";
+import TvShow from "../TvShow/TvShow.js";
 import "./GalleryShows.css";
+import arrayTvShows from "./gallery_get.js";
 
 export default function GalleryShows() {
   return (
     <div className="GalleryShows">
-      <h1>My Series</h1>
+      <h1 className="heading">My Series</h1>
       <div className="container">
-        <TvShow id="Ozark" title="Ozark" picture={ozark} />
-        <TvShow id="Tiger_King" title="Tiger King" picture={tigerKing} />
-        <TvShow id="Money_Heist" title="Money Heist" picture={moneyHeist} />
-        <TvShow id="Game_of_Thrones" title="Game of Thrones" picture={got} />
-        <TvShow id="Breaking_Bad" title="Breaking Bad" picture={breakingBad} />
-        <TvShow id="Narcos" title="Narcos" picture={narcos} />
+        {arrayTvShows().map((tvShow) => (
+          <TvShow
+            key={tvShow.id}
+            id={tvShow.id}
+            title={tvShow.title}
+            picture={tvShow.picture}
+          />
+        ))}
       </div>
     </div>
   );
