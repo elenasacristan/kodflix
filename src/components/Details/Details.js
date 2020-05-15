@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default class Details extends React.Component {
   constructor() {
@@ -16,6 +17,7 @@ export default class Details extends React.Component {
     return (
       <div>
         <h2>{this.state.message}</h2>
+        <Link to="/">Back to home page</Link>
       </div>
     );
   }
