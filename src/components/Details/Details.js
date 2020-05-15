@@ -4,8 +4,7 @@ export default class Details extends React.Component {
   constructor() {
     super();
     this.state = {
-      message:
-        "Hello, this will be the details page for each Movie & TV show :)",
+      message: "Hello, this will be the details page for each Movie & TV show :)",
     };
   }
 
