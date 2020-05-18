@@ -1,33 +1,28 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import arrayTvShows from "../GalleryShows/gallery_get.js";
 
 export default class Details extends React.Component {
   constructor() {
     super();
     this.state = {
-      message:
-        "Hello, this will be the details page for each Movie & TV show :)",
+      tvShow: {},
     };
-    this.timer = null;
   }
 
   componentDidMount() {
-    this.time = setTimeout(
-      () => this.setState({ message: "Coming soon! :)" }),
-      3000
-    );
-  }
-
-
-  componentWillUnmount() {
-  // I clear the timeout when the component is destroyed to fix console error 
-    clearTimeout(this.time);
+    let idTvShow = this.props.match.params.idTvShow;
+    let tvShow = arrayTvShows().find((show) => show.id === idTvShow);
+    this.setState({ tvShow: tvShow });
   }
 
   render() {
     return (
       <div>
-        <h2>{this.state.message}</h2>
+        <div>
+          <h2>{this.state.tvShow.title}</h2>
+          <img src={this.state.tvShow.picture} alt="{this.state.tvShow.title}"/>
+        </div>
         <Link to="/">Back to home page</Link>
       </div>
     );
