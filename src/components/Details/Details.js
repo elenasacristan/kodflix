@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import arrayTvShows from "../GalleryShows/gallery_get.js";
 
 export default class Details extends React.Component {
@@ -17,11 +17,16 @@ export default class Details extends React.Component {
   }
 
   render() {
-    return (
+    return !this.state.tvShow ? (
+      <Redirect to="/not-found" />
+    ) : (
       <div>
         <div>
           <h2>{this.state.tvShow.title}</h2>
-          <img src={this.state.tvShow.picture} alt="{this.state.tvShow.title}"/>
+          <img
+            src={this.state.tvShow.picture}
+            alt="{this.state.tvShow.title}"
+          />
         </div>
         <Link to="/">Back to home page</Link>
       </div>
