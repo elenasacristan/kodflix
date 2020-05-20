@@ -5,7 +5,7 @@ export default function NotFound() {
   return (
     <>
       <h2>Oops! It looks like this page doesn't exist :(</h2>
-      <Link to="/">Back to home page</Link>
+      <Link to="/"> Back to home page</Link>
     </>
   );
 }

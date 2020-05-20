@@ -1,5 +1,6 @@
 body {
-  background-color: #bbbbbb;
+  background: rgb(227, 219, 212);
+  background:linear-gradient(90deg, rgb(210, 210, 210) 2%, rgb(253, 251, 248) 70%);
 }
 
 .App {
@@ -7,7 +8,7 @@ body {
 }
 
 .GalleryShows .heading {
-  color: white;
+  color: rgb(255, 179, 56);
   text-shadow: 1px 1px 1px black;
   font-size: 2.5rem;
 }
