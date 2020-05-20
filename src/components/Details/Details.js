@@ -21,20 +21,18 @@ export default class Details extends React.Component {
     return !this.state.tvShow ? (
       <Redirect to="/not-found" />
     ) : (
-      <div className="details">
-        <div>
-          <h2>{this.state.tvShow.title}</h2>
-          <div className="synopsis-picture">
-            <p className="synopsis">{this.state.tvShow.synopsis}</p>
-            <div className="picture">
-              <img
-                src={this.state.tvShow.picture}
-                alt="{this.state.tvShow.title}"
-              />
-            </div>
+      <div className="Details">
+        <h2 className="heading">{this.state.tvShow.title}</h2>
+        <div className="container">
+          <p className="synopsis">{this.state.tvShow.synopsis}</p>
+          <div className="picture">
+            <img
+              src={this.state.tvShow.picture}
+              alt="{this.state.tvShow.title}"
+            />
           </div>
         </div>
-        <Link to="/">Back to home page</Link>
+        <Link className="back-button" to="/">Back to home page</Link>
       </div>
     );
   }
