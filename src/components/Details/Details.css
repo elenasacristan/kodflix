@@ -29,14 +29,13 @@
 }
 
 .Details img {
-  width: 100%;
+  width: 90%;
   border-top-left-radius: 25%;
   border-bottom-right-radius: 25%;
   box-shadow: 3px 3px 6px 2px rgb(29, 29, 29);
   border-bottom: 10px solid white;
   border-top: 10px solid white;
 }
-
 
 @media only screen and (max-width: 700px) {
   .Details .container {
