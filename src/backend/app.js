@@ -1,7 +1,7 @@
 const express = require('express')
 const gallery = require('./gallery')
 const app = express()
-const port = 3000
+const port = 3001
 
 app.get('/rest/shows/', (req, res) => res.send(gallery.arrayTvShows()));
 

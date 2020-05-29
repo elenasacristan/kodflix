@@ -6,6 +6,8 @@ import Details from "./components/Details/Details.js";
 import NotFound from "./components/NotFound/NotFound.js";
 
 function App() {
+  
+
   return (
     <div className="App">
       <Router>
