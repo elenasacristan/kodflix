@@ -1,4 +1,4 @@
- {
+{
   "name": "kodflix",
   "version": "0.1.0",
   "private": true,
@@ -18,8 +18,8 @@
     "serve": "^11.3.1"
   },
   "scripts": {
-    "start":"serve -s build",
-    "start-servers": "npm-run-all -p build start-backend",
+    "start": "npm-run-all -p start-serve-heroku start-backend",
+    "start-serve-heroku": "serve -s build",
     "start-frontend": "react-scripts start",
     "start-backend": "nodemon src/backend/app.js",
     "start-dev": "npm-run-all -p start-frontend start-backend",
