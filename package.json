@@ -18,7 +18,7 @@
     "serve": "^11.3.1"
   },
   "scripts": {
-    "start": "npm-run-all -p start-heroku start-backend",
+    "start": "npm-run-all -p build start-backend",
     "start-heroku":"serve -s build",
     "start-frontend": "react-scripts start",
     "start-backend": "nodemon src/backend/app.js",
