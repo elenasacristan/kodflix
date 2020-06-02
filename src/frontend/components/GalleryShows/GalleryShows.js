@@ -4,11 +4,15 @@ import "./GalleryShows.css";
 import arrayTvShows from "./gallery_get.js";
 
 export default function GalleryShows() {
-
-  fetch("/rest/shows")
+  fetch("/rest/shows", {
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+  })
     .then((response) => response.json())
     .then((data) => console.log(data));
-  
+
   return (
     <div className="GalleryShows">
       <h1 className="heading">My Series</h1>
@@ -19,8 +23,8 @@ export default function GalleryShows() {
             id={tvShow.id}
             title={tvShow.title}
             picture={tvShow.picture}
-        />))}
-     
+          />
+        ))}
       </div>
     </div>
   );
