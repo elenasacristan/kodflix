@@ -21,7 +21,7 @@
     "start": "serve -s build",
     "start-frontend": "react-scripts start",
     "start-backend": "nodemon src/backend/app.js",
-    "start-all": "npm-run-all -p start-frontend start-backend",
+    "start-dev": "npm-run-all -p start-frontend start-backend",
     "build": "react-scripts build",
     "heroku-postbuild": "npm run build",
     "test": "react-scripts test",
