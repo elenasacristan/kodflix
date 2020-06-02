@@ -4,7 +4,8 @@ import "./GalleryShows.css";
 import arrayTvShows from "./gallery_get.js";
 
 export default function GalleryShows() {
-  fetch("/rest/shows/")
+
+  fetch("/rest/shows")
     .then((response) => response.json())
     .then((data) => console.log(data));
   
