@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import TvShow from "../TvShow/TvShow.js";
 import "./GalleryShows.css";
-import arrayTvShows from "./gallery_get.js";
 
 export default function GalleryShows() {
+  const [shows, setShows] = useState([]);
+
   fetch("/rest/shows", {
     headers: {
       "Content-Type": "application/json",
@@ -11,18 +12,18 @@ export default function GalleryShows() {
     },
   })
     .then((response) => response.json())
-    .then((data) => console.log(data));
+    .then((data) => setShows(data));
 
   return (
     <div className="GalleryShows">
       <h1 className="heading">My Series</h1>
       <div className="container">
-        {arrayTvShows().map((tvShow) => (
+        {shows.map((tvShow) => (
           <TvShow
             key={tvShow.id}
             id={tvShow.id}
             title={tvShow.title}
-            picture={tvShow.picture}
+            picture={require(`../../common/images/${tvShow.id}.jpg`)}
           />
         ))}
       </div>
