@@ -1,60 +1,46 @@
-import React from "react";
-import { Link, Redirect } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Redirect } from "react-router-dom";
 import "./Details.css";
-import Spinner from "../../common/images/Spinner.svg";
+import BackButton from "../BackButton/BackButton.js";
+import Spinner from "../Spiner/Spiner.js";
 
-export default class Details extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      tvShow: {},
-      resultsLoaded: false,
-    };
-  }
+export default function Details({ match }) {
+  const [tvShow, setTvShow] = useState({});
+  const [resultsLoaded, setResultsLoaded] = useState(false);
 
-  componentDidMount() {
-    let idTvShow = this.props.match.params.idTvShow;
+  let idTvShow = match.params.idTvShow;
 
-    fetch("/rest/shows", {
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-    })
+  useEffect(() => {
+    fetch("/rest/shows")
       .then((response) => response.json())
       .then((data) => {
         let tvShow = data.find((show) => show.id === idTvShow);
-        this.setState({ tvShow: tvShow, resultsLoaded: true });
+        setTvShow(tvShow);
+        setResultsLoaded(true);
       });
-  }
-
-  render() {
-    if (!this.state.tvShow) {
-      return <Redirect to="/not-found" />;
-    } else if (!this.state.resultsLoaded) {
-      return (
-        <div className="Spinner">
-          <img src={Spinner} alt="{this.state.tvShow.title}" />
-        </div>
-      );
-    } else {
-      return (
-        <div className="Details">
-          <h2 className="heading">{this.state.tvShow.title}</h2>
-          <div className="container">
-            <p className="synopsis">{this.state.tvShow.synopsis}</p>
-            <div className="picture">
-              <img
-                src={require(`../../common/images/${this.state.tvShow.id}.jpg`)}
-                alt="{this.state.tvShow.title}"
-              />
+  }, []);
+  
+    if (!tvShow) {
+        return <Redirect to="/not-found" />;
+      } else if (!resultsLoaded) {
+        return <Spinner />;
+      } else {
+        return (
+          <div className="Details">
+            <h2 className="heading">{tvShow.title}</h2>
+            <div className="Details-container">
+              <p className="Details-synopsis">{tvShow.synopsis}</p>
+              <div className="Details-picture">
+                <img
+                  src={require(`../../common/images/${tvShow.id}.jpg`)}
+                  alt="{tvShow.title}"
+                />
+              </div>
             </div>
+            <BackButton />
           </div>
-          <Link className="back-button" to="/">
-            Back to home page
-          </Link>
-        </div>
-      );
-    }
-  }
+        );
+      }  
 }
+
+

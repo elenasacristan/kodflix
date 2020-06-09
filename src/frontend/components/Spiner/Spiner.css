@@ -1,0 +1,9 @@
+.Spinner {
+    height: 100vh;
+    display: flex;
+}
+
+.Spinner img {
+    height: 50vh;
+    margin: auto;
+}

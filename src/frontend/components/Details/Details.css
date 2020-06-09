@@ -3,17 +3,17 @@
   padding-bottom: 50px;
 }
 
-.Details .heading {
+.Details h2 {
   font-size: 3rem;
   letter-spacing: 8px;
 }
 
-.Details .container {
+.Details-container {
   display: flex;
   margin-bottom: 10%;
 }
 
-.Details .synopsis {
+.Details-synopsis {
   flex: 1.5;
   font-size: 1.1rem;
   margin-top: 0;
@@ -23,12 +23,12 @@
   line-height: 1.7;
 }
 
-.Details .picture {
+.Details-picture {
   flex: 1;
   padding-left: 10%;
 }
 
-.Details img {
+.Details-picture img {
   width: 100%;
   border-top-left-radius: 25%;
   border-bottom-right-radius: 25%;
@@ -38,22 +38,12 @@
 }
 
 @media only screen and (max-width: 700px) {
-  .Details .container {
+  .Details-container {
     margin: 5%;
     flex-direction: column;
     align-items: stretch;
   }
-  .Details .picture {
+  .Details-picture {
     padding: 10% 0%;
   }
-}
-
-.Spinner {
-  height: 100vh;
-  display: flex;
-}
-
-.Spinner img {
-  height: 50vh;
-  margin: auto;
 }
