@@ -1,15 +1,15 @@
-.link-movie .item {
+.TvShow-item {
   position: relative;
   overflow: hidden;
   box-shadow: 2px 2px 5px 1px #525252;
 }
 
-.link-movie img {
+.TvShow img {
   width: 100%;
   margin-bottom: -6px;
 }
 
-.link-movie .overlay-title {
+.TvShow-overlay-title {
   position: absolute;
   bottom: -140px;
   width: 100%;
@@ -18,12 +18,10 @@
   color: transparent;
   font-family: "Permanent Marker", cursive;
   letter-spacing: 4px;
-  transition: bottom 1s cubic-bezier(0.79, 0.31, 0.56, 1.31),
-    color 1s ease-in-out;
+  transition: bottom 1s cubic-bezier(0.79, 0.31, 0.56, 1.31);
   font-size: 0.7rem;
 }
 
-.link-movie .item:hover .overlay-title {
+.TvShow-item:hover .TvShow-overlay-title {
   bottom: 0px;
-  color: white;
 }
