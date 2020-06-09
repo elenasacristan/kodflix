@@ -1,10 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Comic+Neue&family=Permanent+Marker&display=swap");
 
 body {
-  background: linear-gradient(90deg, #f8deb9 13%, #051704d1 96%);
   font-family: "Comic Neue", cursive;
+  background: conic-gradient(
+    rgb(0, 0, 0) 0 20%,
+    rgb(49, 100, 134) 0 70%,
+    rgb(0, 0, 0) 0
+  );
+
 }
 
+#root {
+  height: 100vh;
+}
 .App {
   text-align: center;
 }
@@ -15,4 +23,3 @@ body {
   font-family: "Permanent Marker", cursive;
   letter-spacing: 5px;
 }
-

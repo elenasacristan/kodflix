@@ -2,15 +2,16 @@
 .back-button{
     text-decoration: none;
     font-size: 1.2rem;
-    font-weight: lighter;
-    color: rgb(161, 4, 4);
-    background-color: white;
+    font-weight: bolder;
+    color:  rgb(255, 255, 255);
+    background-color: transparent;
     padding: 10px 20px;
     border-radius: 15px;
-    box-shadow: 2px 2px 5px 1px #525252;
-    transition: background-color 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    border:2px solid rgb(255, 255, 255);
   }
   
   .back-button:hover{
-    background-color: #f8deb9;
+    border:2px solid #ffae00;
+    color:#ffae00;
   }
