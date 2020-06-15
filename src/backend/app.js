@@ -1,33 +1,17 @@
 const express = require("express");
 const cors = require("cors");
-
-const gallery = require("./gallery");
+// const gallery = require("./gallery");
 const app = express();
 const port = process.env.PORT || 3001;
 const path = require("path");
 const db = require("./db");
 
-const MongoClient = require("mongodb").MongoClient;
-const assert = require("assert"); 
-
-// Connection URL // base URL to connect to the database
-const url = "mongodb://localhost:27017"; //27017 it the port where the mongo server runs
-
-// Database Name
-const dbName = "kodflix";
-
-// Create a new MongoClient
-const client = new MongoClient(url);
-
-// Use connect method to connect to the Server
-client.connect(function (err) {
-  assert.equal(null, err);
-  console.log("Connected successfully to server");
-
-  const db = client.db(dbName);
+db.connect().then(dob => {
+  
+  app.use(cors());
 
   app.get("/rest/shows", (req, res) => {
-    db.collection("shows")
+    dob.collection("shows")
       .find({})
       .toArray((err, results) => {
         if (err) throw err;
@@ -44,5 +28,5 @@ client.connect(function (err) {
   app.listen(port, () =>
     console.log(`Example app listening at http://localhost:${port}`)
   );
-});
 
+});
