@@ -1,5 +1,5 @@
-import ReactGA from "react-ga";
 import React, {useEffect} from "react";
+import ReactGA from "react-ga";
 import GalleryShows from "./components/GalleryShows/GalleryShows.js";
 import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
@@ -15,7 +15,7 @@ function App() {
 
     trackPageView(location);
 
-    history.listen((location) => this.trackPageView(location));
+    history.listen((location) => trackPageView(location));
   }, []);
 
   const trackPageView = (location) => ReactGA.pageview(location.pathname + location.search + location.hash);
