@@ -30,7 +30,7 @@ export default function Details({ match }) {
   } else {
     return (
       <div className="Details">
-        <h2 className="heading">{tvShow.title}</h2>
+        <h2 className="heading">{tvShow.title.split('_').join(' ')}</h2>
         <div className="Details-container">
           <p className="Details-synopsis">{tvShow.synopsis}</p>
           <div className="Details-picture">

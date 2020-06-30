@@ -39,7 +39,7 @@ export default function GalleryShows() {
           {shows.map((tvShow) => (
             <div
               key={tvShow.id}
-              data-aos="fade-left"
+              data-aos="fade-up"
               className="wrapper-animation"
             >
               <TvShow
