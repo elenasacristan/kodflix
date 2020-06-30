@@ -17,7 +17,7 @@ export default function Details({ match }) {
     })
       .then((response) => response.json())
       .then((data) => {
-        let tvShow = data.find((show) => show.id ===  match.params.idTvShow);
+        let tvShow = data.find((show) => show.title ===  match.params.TitleTvShow);
         setTvShow(tvShow);
         setResultsLoaded(true);
       });
@@ -35,7 +35,7 @@ export default function Details({ match }) {
           <p className="Details-synopsis">{tvShow.synopsis}</p>
           <div className="Details-picture">
             <img
-              src={require(`../../common/images/${tvShow.id}.jpg`)}
+              src={require(`../../common/images/${tvShow.title}.jpg`)}
               alt="{tvShow.title}"
             />
           </div>

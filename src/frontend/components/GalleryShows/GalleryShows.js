@@ -45,7 +45,7 @@ export default function GalleryShows() {
                 key={tvShow.id}
                 id={tvShow.id}
                 title={tvShow.title}
-                picture={require(`../../common/images/${tvShow.id}.jpg`)}
+                picture={require(`../../common/images/${tvShow.title}.jpg`)}
               />
             </div>
           ))}

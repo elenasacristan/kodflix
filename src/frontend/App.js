@@ -14,7 +14,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={GalleryShows} />
           <Route exact path="/not-found" component={NotFound} />
-          <Route exact path="/:idTvShow" component={Details} />
+          <Route exact path="/:TitleTvShow" component={Details} />
         </Switch>
       </Router>
     </div>

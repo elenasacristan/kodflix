@@ -6,12 +6,12 @@ const port = process.env.PORT || 3001;
 const path = require("path");
 const db = require("./db");
 
-db.connect().then(dob => {
-  
+db.connect().then((dob) => {
   app.use(cors());
 
   app.get("/rest/shows", (req, res) => {
-    dob.collection("shows")
+    dob
+      .collection("movies")
       .find({})
       .toArray((err, results) => {
         if (err) throw err;
@@ -28,5 +28,4 @@ db.connect().then(dob => {
   app.listen(port, () =>
     console.log(`Example app listening at http://localhost:${port}`)
   );
-
 });
