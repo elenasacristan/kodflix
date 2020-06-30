@@ -6,7 +6,9 @@ import BackButton from "../BackButton/BackButton.js";
 import Spinner from "../Spiner/Spiner.js";
 
 function initializeAnalytics(movie) {
-  ReactGA.initialize("UA-171302758-1");
+  ReactGA.initialize("UA-171302758-1", {gaOptions: {
+    siteSpeedSampleRate: 100
+  }});
   ReactGA.pageview('/' + movie)
 }
 
