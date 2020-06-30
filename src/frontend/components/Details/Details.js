@@ -1,13 +1,19 @@
 import React, { useState, useEffect } from "react";
+import ReactGA from "react-ga";
 import { Redirect } from "react-router-dom";
 import "./Details.css";
 import BackButton from "../BackButton/BackButton.js";
 import Spinner from "../Spiner/Spiner.js";
 
+function initializeAnalytics(movie) {
+  ReactGA.initialize("UA-171302758-1");
+  ReactGA.pageview('/' + movie)
+}
+
 export default function Details({ match }) {
   const [tvShow, setTvShow] = useState({});
   const [resultsLoaded, setResultsLoaded] = useState(false);
-
+  initializeAnalytics(match.params.TitleTvShow);
   useEffect(() => {
     fetch("/rest/shows", {
       headers: {
