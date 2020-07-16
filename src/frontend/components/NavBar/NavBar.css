@@ -1,0 +1,96 @@
+.Navbar {
+  position: fixed;
+  top: 0;
+  display: flex;
+  width: 100vw;
+  height: 15vh;
+  background-color: rgba(51, 51, 51, 0.952);
+  flex-direction: row;
+  z-index: 2;
+  justify-content: space-between;
+}
+
+.Navbar h1 {
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+  margin-top: 8px;
+  white-space: nowrap;
+}
+
+.Navbar-icon {
+  transform: rotate(40deg);
+  color: orange;
+  margin-right: 30px;
+  position: relative;
+  top: 25px;
+  left: -50px;
+  z-index: -1;
+}
+
+.Navbar-button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  margin: 15px;
+}
+
+.Navbar-button svg {
+  background-color: rgba(0, 0, 0, 0.685);
+  padding: 10%;
+  border-radius: 50%;
+}
+
+.Navbar-hamburguer {
+  color: white;
+  font-size: 3rem;
+}
+
+.NavBar-menu {
+  display: flex;
+  top: 15vh;
+  left: 0;
+  position: fixed;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.876);
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30vw;
+  height: 90vh;
+  transition: left 2s cubic-bezier(0.68, 0.07, 0.1, 1.28);
+}
+
+.NavBar-menu a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-size: 1.5rem;
+  text-align: center;
+  z-index: 3;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid white;
+}
+
+.hide {
+  left: -1500px;
+}
+
+@media only screen and (max-width: 700px) {
+  .NavBar-menu {
+    width: 80vw;
+  }
+  .Navbar h1 {
+    font-size: 2.2rem;
+  }
+  .Navbar-button {
+    margin: 5px;
+  }
+  .Navbar-button svg {
+    padding: 10%;
+  }
+
+  .Navbar-hamburguer {
+    font-size: 2.5rem;
+  }
+}
