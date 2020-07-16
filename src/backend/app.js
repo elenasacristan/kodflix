@@ -19,6 +19,16 @@ db.connect().then((dob) => {
       });
   });
 
+  app.get("/rest/shows/:show", (req, res) => {
+    dob
+      .collection("movies")
+      .findOne({title: req.params.show},function(err, result) {
+        if (err) throw err;
+        res.send(result);
+      })
+  });
+
+
   app.use(express.static(path.join(__dirname, "../../build")));
 
   app.get("*", function (req, res) {

@@ -16,20 +16,17 @@ export default function Details({ match }) {
   const [tvShow, setTvShow] = useState({});
   const [resultsLoaded, setResultsLoaded] = useState(false);
   initializeAnalytics(match.params.TitleTvShow);
+
   useEffect(() => {
-    fetch("/rest/shows", {
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-    })
+    fetch(`/rest/shows/${match.params.TitleTvShow}`)
       .then((response) => response.json())
       .then((data) => {
-        let tvShow = data.find((show) => show.title ===  match.params.TitleTvShow);
-        setTvShow(tvShow);
+        setTvShow(data);
         setResultsLoaded(true);
       });
-  }, [match.params.idTvShow]);
+      
+  }, [match.params.TitleTvShow]);
+
 
   if (!tvShow) {
     return <Redirect to="/not-found" />;

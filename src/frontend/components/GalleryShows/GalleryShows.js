@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from "react";
 import TvShow from "../TvShow/TvShow.js";
 import "./GalleryShows.css";
-import { MdTheaters } from "react-icons/md";
 import Spinner from "../Spiner/Spiner.js";
 import Aos from "aos";
 import "aos/dist/aos.css";
 
 export default function GalleryShows() {
-   
   const [shows, setShows] = useState([]);
   const [resultsLoaded, setResultsLoaded] = useState(false);
 
@@ -26,15 +24,12 @@ export default function GalleryShows() {
       });
   }, []);
 
-  if(!resultsLoaded){
+  if (!resultsLoaded) {
     return <Spinner />;
- 
-  }else{
+  } else {
     return (
       <div className="GalleryShows">
-        <h1 className="heading">
-          Kodflix <MdTheaters className="GalleryShows-icon" />
-        </h1>
+        
         <div className="GalleryShows-container">
           {shows.map((tvShow) => (
             <div
@@ -54,8 +49,4 @@ export default function GalleryShows() {
       </div>
     );
   }
-
-
-
-
 }

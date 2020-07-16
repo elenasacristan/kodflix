@@ -1,3 +1,7 @@
+.TvShow{
+  text-align: center;
+}
+
 .TvShow-item {
   position: relative;
   overflow: hidden;

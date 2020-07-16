@@ -1,6 +1,6 @@
-.GalleryShows h1 {
-  font-size: 3.5rem;
-  letter-spacing: 5px;
+.GalleryShows{
+  text-align: center;
+  margin-top: 18vh;
 }
 
 .GalleryShows-container {
@@ -11,8 +11,3 @@
   grid-gap: 10px;
 }
 
-.GalleryShows-icon {
-  transform: rotate(25deg);
-  padding-left: 0.5%;
-  color: orange;
-}
