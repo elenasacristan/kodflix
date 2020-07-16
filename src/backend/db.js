@@ -15,7 +15,7 @@ function connect() {
   return new Promise((resolve, reject) => {
       MongoClient.connect(url, { useUnifiedTopology: true },function (err, client) {
           assert.equal(null, err);
-          console.log('Connected successfully to server');
+          console.log('Connected successfully to serverr');
           const dbo = client.db(dbName);
           resolve(dbo);
       });
