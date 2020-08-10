@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Details from "./components/Details/Details.js";
 import NotFound from "./components/NotFound/NotFound.js";
 import NavBar from "./components/NavBar/NavBar.js";
+import ManageTvShows from "./components/ManageTvShows/ManageTvShows.js";
 
 function initializeAnalytics() {
   ReactGA.initialize("UA-171302758-1", {
@@ -26,6 +27,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={GalleryShows} />
           <Route exact path="/not-found" component={NotFound} />
+          <Route exact path="/manage/tv-shows" component={ManageTvShows} />
           <Route exact path="/:TitleTvShow" component={Details} />
         </Switch>
       </Router>

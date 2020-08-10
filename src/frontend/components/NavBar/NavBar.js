@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./NavBar.css";
-import { Link } from "react-router-dom";
+import MenuLink from "../MenuLink/MenuLink.js";
 import { MdTheaters } from "react-icons/md";
 import { GoThreeBars } from "react-icons/go";
 
@@ -22,8 +22,12 @@ export default function NavBar() {
         onClick={toggle}
         className={showMenu ? "NavBar-menu" : "NavBar-menu hide"}
       >
-        <Link to="/">Home</Link>
-        <Link to="/">Placeholder</Link>
+        <MenuLink linkto="/" text="Home" icon="fahome" />
+        <MenuLink
+          linkto="/manage/tv-shows"
+          text="Manage TV Shows"
+          icon="fadesktop"
+        />
       </main>
     </>
   );
