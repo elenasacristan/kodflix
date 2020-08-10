@@ -1,5 +1,5 @@
 
-.back-button{
+.PlayButton{
     text-decoration: none;
     font-size: 1.2rem;
     font-weight: bolder;
@@ -11,13 +11,13 @@
     /* border:2px solid rgb(255, 255, 255); */
   }
   
-  .back-button:hover{
+  .PlayButton:hover{
     color:  rgb(0, 0, 0);
     background-color: rgb(250, 202, 69);
   }
 
   @media only screen and (max-width: 600px) {
-    .back-button{
+    .PlayButton{
       font-size: 0.9rem;
     }
   }

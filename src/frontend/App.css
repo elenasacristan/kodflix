@@ -4,10 +4,14 @@ body {
   background: conic-gradient( rgb(0, 0, 0) 0 20%, rgb(49, 100, 134) 0 70%, rgb(0, 0, 0) 0);
 }
 
+
 #root {
-  height: 100vh;
+  height: 100%;
 }
 
+.App{
+  height: 100%;
+}
 
 .heading {
   color: white;

@@ -3,6 +3,7 @@ import "./NavBar.css";
 import MenuLink from "../MenuLink/MenuLink.js";
 import { MdTheaters } from "react-icons/md";
 import { GoThreeBars } from "react-icons/go";
+import { Link } from "react-router-dom";
 
 export default function NavBar() {
   const [showMenu, setShowMenu] = useState(false);
@@ -14,9 +15,11 @@ export default function NavBar() {
         <button onClick={toggle} className="Navbar-button">
           <GoThreeBars className="Navbar-hamburguer" />
         </button>
-        <h1 className="heading">
-          Kodflix <MdTheaters className="Navbar-icon" />
-        </h1>
+        <Link className="Navbar-logo" to="/">
+          <h1 className="heading">
+            Kodflix <MdTheaters className="Navbar-icon" />
+          </h1>
+        </Link>
       </nav>
       <main
         onClick={toggle}

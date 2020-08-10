@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import ReactGA from "react-ga";
 import { Redirect } from "react-router-dom";
 import "./Details.css";
-import BackButton from "../BackButton/BackButton.js";
+import PlayButton from "../PlayButton/PlayButton.js";
 import Spinner from "../Spiner/Spiner.js";
 
 function initializeAnalytics(movie) {
@@ -29,12 +29,6 @@ export default function Details({ match }) {
       });
   }, [match.params.TitleTvShow]);
 
-  // let imagePath = `../../common/images/${tvShow.title}.jpg`;
-  // console.log(imagePath);
-  // let styleBackground = {
-  //  'backgroundImage': `url(${require(imagePath)})`
-  // }
-
   if (!tvShow) {
     return <Redirect to="/not-found" />;
   } else if (!resultsLoaded) {
@@ -57,7 +51,7 @@ export default function Details({ match }) {
           <div className="Details-container">
             <p className="Details-synopsis">{tvShow.synopsis}</p>
           </div>
-          <BackButton />
+          <PlayButton showTitle={tvShow.title}/>
         </div>
       </div>
     );

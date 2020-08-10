@@ -1,0 +1,8 @@
+.Play {
+  height: 85vh;
+  margin-top: 15vh;
+}
+
+.Play iframe{
+  border: none;
+}

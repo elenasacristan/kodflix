@@ -1,7 +1,6 @@
 import React from "react";
 import ReactGA from "react-ga";
 import "./NotFound.css";
-import BackButton from "../BackButton/BackButton.js";
 
 function initializeAnalytics() {
   ReactGA.initialize("UA-171302758-1", {gaOptions: {
@@ -17,7 +16,6 @@ export default function NotFound() {
       <h2 className="heading">
         Oops! It looks like this page doesn't exist :(
       </h2>
-      <BackButton/>
     </div>
   );
 }
