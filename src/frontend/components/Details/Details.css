@@ -1,8 +1,17 @@
 .Details {
   padding: 0% 15%;
-  padding-bottom: 50px;
-  margin-top: 18vh;
+  margin-top: 15vh;
+  height: 100vh;
   text-align: center;
+  position: relative;
+}
+
+.Details-overlay{
+  background-image: linear-gradient(to bottom, black 0%, rgba(0, 0, 0, 0) 80%);
+  position: absolute;
+  left:0;
+  right: 0;
+  padding-bottom: 50px;
 }
 
 .Details h2 {
@@ -12,39 +21,21 @@
 
 .Details-container {
   display: flex;
-  margin-bottom: 10%;
+  padding: 0 10% 5%;
 }
 
 .Details-synopsis {
-  flex: 1.5;
+  margin: auto;
+  margin-bottom: 50px;
   font-size: 1.1rem;
-  margin-top: 0;
   color: white;
   font-weight: bold;
-  text-align: justify;
   line-height: 2;
+  text-align: justify;
 }
 
-.Details-picture {
-  flex: 1;
-  padding-left: 10%;
-}
-
-.Details-picture img {
-  width: 100%;
-  border-top-left-radius: 25%;
-  border-bottom-right-radius: 25%;
-  border-bottom: 10px solid #ffae00;
-    border-top: 10px solid #ffffff;
-}
-
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 600px) {
   .Details-container {
-    margin: 5%;
-    flex-direction: column;
-    align-items: stretch;
-  }
-  .Details-picture {
-    padding: 10% 0%;
+    padding: 0 15%;
   }
 }

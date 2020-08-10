@@ -1,5 +1,21 @@
+.MenuLink {
+  display: flex;
+}
 
-  .MenuLink .sidebar-icon{
-    margin-right: 20px;
-    color:orange;
+
+
+.MenuLink .sidebar-icon {
+  margin-right: 20px;
+  color: orange;
+}
+
+@media only screen and (max-width: 1000px) {
+  .MenuLink {
+    flex-direction: column;
   }
+  .MenuLink .sidebar-icon {
+    margin-right: 0px;
+    margin-bottom: 20px;
+    color: orange;
+  }
+}

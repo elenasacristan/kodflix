@@ -8,7 +8,7 @@ export default function MenuLink({ linkto, text, icon }) {
     <Link className="MenuLink" to={linkto}>
      {icon === 'fadesktop' && <FaDesktop className="sidebar-icon" />}
      {icon === 'fahome' && <FaHome className="sidebar-icon" />}
-      {text}
+     <span className="MenuLink-text">{text}</span>
     </Link>
   );
 }
