@@ -1,5 +1,7 @@
-import React,{useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import "./Play.css";
+import Spinner from "../Spiner/Spiner.js";
+
 
 export default function Play({ match }) {
   const [tvShow, setTvShow] = useState({});
@@ -14,9 +16,17 @@ export default function Play({ match }) {
       });
   }, [match.params.TitleTvShow]);
 
-  return (
-    <div className="Play">
-      <iframe width="100%" height="100%" src={`https://www.youtube.com/embed/${tvShow.videoId}`}></iframe>
-    </div>
-  );
+  if (!resultsLoaded) {
+    return <Spinner />;
+  } else {
+    return (
+      <div className="Play">
+        <iframe
+          width="100%"
+          height="100%"
+          src={`https://www.youtube.com/embed/${tvShow.videoId}`}
+        ></iframe>
+      </div>
+    );
+  }
 }
