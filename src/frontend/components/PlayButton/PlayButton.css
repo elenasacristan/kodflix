@@ -1,23 +1,16 @@
+.PlayButton {
+  color: white;
+  font-size: 9rem;
+  transition: all 0.5s ease-in-out;
+  text-decoration: none;
+  position: relative;
+}
 
-.PlayButton{
-    text-decoration: none;
-    font-size: 1.2rem;
-    font-weight: bolder;
-    color:  rgb(0, 0, 0);
-    background-color: white;
-    padding: 10px 20px;
-    border-radius: 15px;
-    transition: all 0.5s ease-in-out;
-    /* border:2px solid rgb(255, 255, 255); */
-  }
-  
-  .PlayButton:hover{
-    color:  rgb(0, 0, 0);
-    background-color: rgb(250, 202, 69);
-  }
 
-  @media only screen and (max-width: 600px) {
-    .PlayButton{
-      font-size: 0.9rem;
-    }
-  }
+.PlayButton:hover {
+  color: rgb(255, 175, 3);
+  font-size: 11rem;
+
+}
+
+
