@@ -25,6 +25,7 @@ export default function Play({ match }) {
           width="100%"
           height="100%"
           src={`https://www.youtube.com/embed/${tvShow.videoId}`}
+          title={tvShow.title}
         ></iframe>
       </div>
     );

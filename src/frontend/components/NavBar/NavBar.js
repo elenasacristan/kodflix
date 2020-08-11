@@ -31,6 +31,7 @@ export default function NavBar() {
           text="Manage TV Shows"
           icon="fadesktop"
         />
+        <MenuLink linkto="/admin/tv-shows" text="Admin" icon="admin" />
       </main>
     </>
   );
