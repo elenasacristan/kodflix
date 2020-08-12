@@ -31,14 +31,13 @@ export default function GalleryShows() {
       <div className="GalleryShows">
         
         <div className="GalleryShows-container">
-          {shows.map((tvShow) => (
+          {shows.map((tvShow, index) => (
             <div
-              key={tvShow.id}
+              key={index}
               data-aos="fade-up"
               className="wrapper-animation"
             >
               <TvShow
-                key={tvShow.id}
                 id={tvShow.id}
                 title={tvShow.title}
                 picture={require(`../../common/images/${tvShow.title}.jpg`)}

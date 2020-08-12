@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import "./AdminShowsAdd.css";
+import ImageUpload from "../../ImageUpload/ImageUpload";
 
 export default function AdminShowsAdd() {
   const [title, setTitle] = useState("");
   const [synopsis, setSynopsis] = useState("");
   const [videoId, setVideoId] = useState("");
+  const [file, setFile] = useState(null);
 
   const handleTitle = (e) => {
     setTitle(e.target.value);
@@ -16,24 +18,37 @@ export default function AdminShowsAdd() {
     setVideoId(e.target.value);
   };
 
+  const fileChangedHandler = (e) => {
+    setFile(e.target.files[0]);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    let formData = new FormData();
+    const formData = new FormData();
+    const formDataImg = new FormData();
 
-    formData.append("title", title.split(' ').join('_'));
+    formData.append("title", title.split(" ").join("_"));
     formData.append("synopsis", synopsis);
-    formData.append("videoId", videoId)
+    formData.append("videoId", videoId);
+    formData.append("id", title.split(" ").join("_"));
+    formDataImg.append("file", file, title.split(" ").join("_"));
 
     console.log(formData);
     fetch("/rest/shows/add", {
       method: "POST",
       body: formData,
     });
+
+    fetch("/rest/shows/upload", {
+      method: "POST",
+      body: formDataImg,
+    });
   };
 
   return (
     <div className="AdminShowsAdd">
+      {/* <ImageUpload /> */}
       <h2>Add a new movie</h2>
       <div className="AdminShowsAdd-container">
         <form onSubmit={handleSubmit} className="AdminShowsAdd-form">
@@ -50,6 +65,7 @@ export default function AdminShowsAdd() {
             value={synopsis}
             placeholder="Add here the movie synopsis..."
           />
+          <input type="file" onChange={fileChangedHandler} />
           <input
             onChange={handleVideoId}
             type="text"
