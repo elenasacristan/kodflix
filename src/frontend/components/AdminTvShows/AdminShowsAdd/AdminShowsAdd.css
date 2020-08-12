@@ -1,0 +1,48 @@
+.AdminShowsAdd {
+    padding-top: 15vh;
+    height: 100vh;
+}
+
+.AdminShowsAdd h2{
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+}
+.AdminShowsAdd-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.AdminShowsAdd-form {
+    margin: auto;
+    display: flex;
+    width: 70%;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.AdminShowsAdd-form input {
+    height: 40px;
+}
+
+.AdminShowsAdd-form textarea {
+    height: 150px;
+    margin: 10px 0;
+}
+
+.AdminShowsAdd-form button {
+    background-color: #ffa500;
+    border: none;
+    height: 50px;
+    width: 35%;
+    text-align: center;
+    margin: 25px auto;
+    transition: 1s linear;
+    border-radius: 15px;
+}
+
+.AdminShowsAdd-form button:hover {
+    background-color: #fac564;
+    
+}

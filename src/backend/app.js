@@ -4,6 +4,8 @@ const app = express();
 const port = process.env.PORT || 3001;
 const path = require("path");
 const db = require("./db");
+var multer = require("multer");
+var upload = multer();
 
 db.connect().then((dob) => {
   app.use(cors());
@@ -27,6 +29,12 @@ db.connect().then((dob) => {
       })
   });
 
+  app.post("/rest/shows/add", upload.none(), (req, res) => {
+    console.log(req.body);
+
+    // dob.collection("movies").insertOne({ title : req.body.title, synopsis : req.body.synopsis, videoId : req.body.videoId })
+
+  });
 
   app.use(express.static(path.join(__dirname, "../../build")));
 

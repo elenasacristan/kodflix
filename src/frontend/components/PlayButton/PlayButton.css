@@ -1,10 +1,9 @@
 .icon-play {
   color: white;
   font-size: 9rem;
-  transition: all 0.5s ease-in-out;
   text-decoration: none;
   position: relative;
-  animation: spin 0.8s linear infinite;
+  animation: spin 2s linear infinite;
   animation-play-state: paused;
 }
 
@@ -15,12 +14,14 @@
 
 @keyframes spin {
   0% {
-    transform: rotate(10deg);
+    font-size: 9rem;
   }
+
   50% {
-    transform: rotate(-10deg);
+    font-size: 11rem;
   }
+
   100% {
-    transform: rotate(10deg);
+    font-size: 9rem;
   }
 }
