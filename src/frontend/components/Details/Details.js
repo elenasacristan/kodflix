@@ -38,7 +38,7 @@ export default function Details({ match }) {
       <div
         className="Details"
         style={{
-          background: `url(${require(`../../common/images/wallpapers/${tvShow.title}.jpg`)})`,
+          background: `url(${require(`../../../../build/images/wallpapers/${tvShow.title}.jpg`)})`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
           backgroundPosition: "center",
