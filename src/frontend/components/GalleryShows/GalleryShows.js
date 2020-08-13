@@ -40,7 +40,7 @@ export default function GalleryShows() {
               <TvShow
                 id={tvShow.id}
                 title={tvShow.title}
-                picture={require(`../../../../build/images/${tvShow.title}.jpg`)}
+                picture={require(`../../common/images/${tvShow.title}.jpg`)}
 
                 // picture={require(`../../common/images/${tvShow.title}.jpg`)}
               />
