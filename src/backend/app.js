@@ -30,6 +30,7 @@ db.connect().then((dob) => {
 
   var storage = multer.diskStorage({
     destination: function (req, file, cb) {
+      cb(null, "build/static/media/");
       cb(null, "src/frontend/common/images");
       cb(null, "src/frontend/common/images/wallpapers");
 

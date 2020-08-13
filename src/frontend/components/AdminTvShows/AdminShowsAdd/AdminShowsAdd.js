@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./AdminShowsAdd.css";
-import ImageUpload from "../../ImageUpload/ImageUpload";
 
 export default function AdminShowsAdd() {
   const [title, setTitle] = useState("");
