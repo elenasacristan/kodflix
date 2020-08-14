@@ -6,6 +6,11 @@ const port = process.env.PORT || 3001;
 const path = require("path");
 // const db = require("./db");
 // var multer = require("multer");
+require("dotenv").config({ path: __dirname + "/.env" });
+
+const url = process.env.NODE_ENV === 'production' ?
+process.env.MONGO_URL : 'mongodb://localhost:27017/kodflix';
+
 
 app.use(cors());
 
@@ -21,7 +26,7 @@ const movieSchema = new mongoose.Schema({
 
 //if the db doesn't exist it will be generated
 mongoose
-  .connect("mongodb://localhost:27017/kodflix", {
+  .connect(url, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
