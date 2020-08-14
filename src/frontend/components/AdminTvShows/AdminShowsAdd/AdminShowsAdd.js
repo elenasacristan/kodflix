@@ -28,10 +28,10 @@ export default function AdminShowsAdd() {
     const formData = new FormData();
     const formDataImg = new FormData();
 
+    formData.append("id", title.split(" ").join("_"));
     formData.append("title", title.split(" ").join("_"));
     formData.append("synopsis", synopsis);
     formData.append("videoId", videoId);
-    formData.append("id", title.split(" ").join("_"));
     formDataImg.append("file", file, title.split(" ").join("_"));
 
     console.log(formData);
@@ -40,7 +40,7 @@ export default function AdminShowsAdd() {
       body: formData,
     });
 
-    fetch("/rest/shows/upload", {
+    fetch("/upload", {
       method: "POST",
       body: formDataImg,
     });
@@ -65,7 +65,7 @@ export default function AdminShowsAdd() {
             value={synopsis}
             placeholder="Add here the movie synopsis..."
           />
-          <input type="file" onChange={fileChangedHandler} />
+          <input type="file" name="file" onChange={fileChangedHandler}/>
           <input
             onChange={handleVideoId}
             type="text"

@@ -24,6 +24,7 @@ export default function GalleryShows() {
       });
   }, []);
 
+
   if (!resultsLoaded) {
     return <Spinner />;
   } else {
@@ -40,7 +41,7 @@ export default function GalleryShows() {
               <TvShow
                 id={tvShow.id}
                 title={tvShow.title}
-                picture={require(`../../common/images/${tvShow.title}.jpg`)}
+                picture={tvShow.title}
 
                 // picture={require(`../../common/images/${tvShow.title}.jpg`)}
               />

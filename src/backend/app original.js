@@ -33,7 +33,6 @@ db.connect().then((dob) => {
       cb(null, "build/static/media");
       cb(null, "src/frontend/common/images");
       cb(null, "src/frontend/common/images/wallpapers");
-
     },
     filename: function (req, file, cb) {
       cb(null, file.originalname + '.jpg');
