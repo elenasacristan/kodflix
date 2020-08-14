@@ -1,6 +1,6 @@
 import React from "react";
 import ReactGA from "react-ga";
-import GalleryShows from "./components/GalleryShows/GalleryShows.js";
+import GalleryMovies from "./components/GalleryMovies/GalleryMovies.js";
 import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Details from "./components/Details/Details.js";
@@ -30,7 +30,7 @@ function App() {
       <Router>
         <NavBar />
         <Switch>
-          <Route exact path="/" component={GalleryShows} />
+          <Route exact path="/" component={GalleryMovies} />
           <Route exact path="/not-found" component={NotFound} />
           <Route exact path="/manage/movies" component={ManageMovies} />
           <Route exact path="/admin/movies/list" component={AdminMoviesList} />

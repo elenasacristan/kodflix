@@ -4,17 +4,17 @@ import Spinner from "../Spiner/Spiner.js";
 
 
 export default function Play({ match }) {
-  const [tvShow, setTvShow] = useState({});
+  const [movie, setMovie] = useState({});
   const [resultsLoaded, setResultsLoaded] = useState(false);
 
   useEffect(() => {
-    fetch(`/rest/shows/${match.params.TitleTvShow}`)
+    fetch(`/rest/shows/${match.params.Movie}`)
       .then((response) => response.json())
       .then((data) => {
-        setTvShow(data);
+        setMovie(data);
         setResultsLoaded(true);
       });
-  }, [match.params.TitleTvShow]);
+  }, [match.params.Movie]);
 
   if (!resultsLoaded) {
     return <Spinner />;
@@ -24,8 +24,8 @@ export default function Play({ match }) {
         <iframe
           width="100%"
           height="100%"
-          src={`https://www.youtube.com/embed/${tvShow.videoId}`}
-          title={tvShow.title}
+          src={`https://www.youtube.com/embed/${movie.videoId}`}
+          title={movie.title}
         ></iframe>
       </div>
     );

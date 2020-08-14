@@ -45,8 +45,8 @@ mongoose
       res.send(movies);
     });
 
-    app.get("/rest/shows/:show", async (req, res) => {
-      const movie = await Movie.findOne({ title: req.params.show });
+    app.get("/rest/shows/:movie", async (req, res) => {
+      const movie = await Movie.findOne({ title: req.params.movie });
       res.send(movie);
     });
 
@@ -75,7 +75,7 @@ mongoose
     let upload = multer();
 
     // Add movies to database
-    app.post("/rest/shows/add", upload.none(), (req, res) => {
+    app.post("/rest/movies/add", upload.none(), (req, res) => {
       let movie = new Movie({
         id: req.body.id,
         title: req.body.title,

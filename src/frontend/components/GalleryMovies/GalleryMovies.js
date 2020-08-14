@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import TvShow from "../TvShow/TvShow.js";
-import "./GalleryShows.css";
+import "./GalleryMovies.css";
 import Spinner from "../Spiner/Spiner.js";
 import Aos from "aos";
 import "aos/dist/aos.css";
 
-export default function GalleryShows() {
+export default function GalleryMovies() {
   const [shows, setShows] = useState([]);
   const [resultsLoaded, setResultsLoaded] = useState(false);
 
@@ -29,9 +29,9 @@ export default function GalleryShows() {
     return <Spinner />;
   } else {
     return (
-      <div className="GalleryShows">
+      <div className="GalleryMovies">
         
-        <div className="GalleryShows-container">
+        <div className="GalleryMovies-container">
           {shows.map((tvShow, index) => (
             <div
               key={index}

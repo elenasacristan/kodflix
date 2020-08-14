@@ -35,7 +35,7 @@ export default function AdminMoviesAdd() {
     formDataImg.append("file", file, title.split(" ").join("_"));
 
     console.log(formData);
-    fetch("/rest/shows/add", {
+    fetch("/rest/movies/add", {
       method: "POST",
       body: formData,
     });
