@@ -3,11 +3,12 @@
     height: 100vh;
 }
 
-.AdminMoviesAdd h2{
+.AdminMoviesAdd h2 {
     color: white;
     font-size: 2rem;
     text-align: center;
 }
+
 .AdminMoviesAdd-container {
     display: flex;
     flex-direction: column;
@@ -22,13 +23,15 @@
     justify-content: center;
 }
 
-.AdminMoviesAdd-form input {
-    height: 40px;
-}
-
 .AdminMoviesAdd-form textarea {
     height: 150px;
     margin: 10px 0;
+}
+
+.AdminMoviesAdd-form input, .AdminMoviesAdd-form textarea {
+    border-radius: 5px;
+    border: none;
+    padding: 2%;
 }
 
 .AdminMoviesAdd-form button {
@@ -39,10 +42,32 @@
     text-align: center;
     margin: 25px auto;
     transition: 1s linear;
-    border-radius: 15px;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .AdminMoviesAdd-form button:hover {
     background-color: #fac564;
-    
+}
+
+.AdminMoviesAdd-form .inputFile {
+    padding: 5px 10px;
+    background: #4cb868;
+    width: 60%;
+    margin: auto;
+    position: relative;
+    color: #fff;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    margin-bottom: 2%;
+}
+
+.inputFile input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    right: 0;
+    top: 0;
+    height: 100%;
 }

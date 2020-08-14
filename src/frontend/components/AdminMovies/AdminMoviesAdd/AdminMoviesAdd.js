@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useHistory } from 'react-router-dom';
+import { useHistory } from "react-router-dom";
 import "./AdminMoviesAdd.css";
 
 export default function AdminMoviesAdd() {
@@ -22,11 +22,10 @@ export default function AdminMoviesAdd() {
     setFile(e.target.files[0]);
     console.log(e.target.files[0]);
   };
-  
+
   const history = useHistory();
 
   const handleSubmit = (e) => {
-
     e.preventDefault();
     const formData = new FormData();
     const formDataImg = new FormData();
@@ -48,12 +47,11 @@ export default function AdminMoviesAdd() {
       body: formDataImg,
     });
 
-    history.push('/')
+    history.push("/");
   };
 
   return (
     <div className="AdminMoviesAdd">
-      {/* <ImageUpload /> */}
       <h2>Add a new movie</h2>
       <div className="AdminMoviesAdd-container">
         <form onSubmit={handleSubmit} className="AdminMoviesAdd-form">
@@ -70,7 +68,14 @@ export default function AdminMoviesAdd() {
             value={synopsis}
             placeholder="Add here the movie synopsis..."
           />
-          <input type="file" name="file" onChange={fileChangedHandler}/>
+          <div className="inputFile">
+          Choose Cover File
+            <input
+              type="file"
+              name="file"
+              onChange={fileChangedHandler}
+            />
+          </div>
           <input
             onChange={handleVideoId}
             type="text"

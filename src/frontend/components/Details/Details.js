@@ -21,7 +21,7 @@ export default function Details({ match }) {
   initializeAnalytics(match.params.Movie);
 
   useEffect(() => {
-    fetch(`/rest/shows/${match.params.Movie}`)
+    fetch(`/rest/movies/${match.params.Movie}`)
       .then((response) => response.json())
       .then((data) => {
         setMovie(data);

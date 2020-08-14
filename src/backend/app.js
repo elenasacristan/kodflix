@@ -45,7 +45,7 @@ mongoose
       res.send(movies);
     });
 
-    app.get("/rest/shows/:movie", async (req, res) => {
+    app.get("/rest/movies/:movie", async (req, res) => {
       const movie = await Movie.findOne({ title: req.params.movie });
       res.send(movie);
     });
@@ -90,6 +90,7 @@ mongoose
     //Upload movie cover
     app.post("/upload", upload.single("file"), (req, res) => {
       console.log("file uploaded!");
+      res.redirect('/');
     });
 
     let gfs = new mongoose.mongo.GridFSBucket(mongoose.connection.db, {
