@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import "./AdminShowsAdd.css";
+import "./AdminMoviesAdd.css";
 
-export default function AdminShowsAdd() {
+export default function AdminMoviesAdd() {
   const [title, setTitle] = useState("");
   const [synopsis, setSynopsis] = useState("");
   const [videoId, setVideoId] = useState("");
@@ -47,11 +47,11 @@ export default function AdminShowsAdd() {
   };
 
   return (
-    <div className="AdminShowsAdd">
+    <div className="AdminMoviesAdd">
       {/* <ImageUpload /> */}
       <h2>Add a new movie</h2>
-      <div className="AdminShowsAdd-container">
-        <form onSubmit={handleSubmit} className="AdminShowsAdd-form">
+      <div className="AdminMoviesAdd-container">
+        <form onSubmit={handleSubmit} className="AdminMoviesAdd-form">
           <input
             onChange={handleTitle}
             type="text"

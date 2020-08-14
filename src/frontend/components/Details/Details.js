@@ -15,21 +15,21 @@ function initializeAnalytics(movie) {
 }
 
 export default function Details({ match }) {
-  const [tvShow, setTvShow] = useState({});
+  const [movie, setMovie] = useState({});
   const [resultsLoaded, setResultsLoaded] = useState(false);
 
-  initializeAnalytics(match.params.TitleTvShow);
+  initializeAnalytics(match.params.Movie);
 
   useEffect(() => {
-    fetch(`/rest/shows/${match.params.TitleTvShow}`)
+    fetch(`/rest/shows/${match.params.Movie}`)
       .then((response) => response.json())
       .then((data) => {
-        setTvShow(data);
+        setMovie(data);
         setResultsLoaded(true);
       });
-  }, [match.params.TitleTvShow]);
+  }, [match.params.Movie]);
 
-  if (!tvShow) {
+  if (!movie) {
     return <Redirect to="/not-found" />;
   } else if (!resultsLoaded) {
     return <Spinner />;
@@ -38,7 +38,7 @@ export default function Details({ match }) {
       <div
         className="Details"
         style={{
-          background: `url('covers/${tvShow.title}')`,
+          background: `url('covers/${movie.title}')`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
           backgroundPosition: "center",
@@ -47,11 +47,11 @@ export default function Details({ match }) {
         }}
       >
         <div className="Details-overlay">
-          <h2 className="heading">{tvShow.title.split("_").join(" ")}</h2>
+          <h2 className="heading">{movie.title.split("_").join(" ")}</h2>
           <div className="Details-container">
-            <p className="Details-synopsis">{tvShow.synopsis}</p>
+            <p className="Details-synopsis">{movie.synopsis}</p>
           </div>
-          <PlayButton showTitle={tvShow.title}/>
+          <PlayButton showTitle={movie.title}/>
         </div>
       </div>
     );

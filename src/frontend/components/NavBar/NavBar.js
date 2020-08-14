@@ -6,8 +6,8 @@ import { GoThreeBars } from "react-icons/go";
 import { Link } from "react-router-dom";
 
 export default function NavBar() {
-  const [showMenu, setShowMenu] = useState(false);
-  const toggle = () => setShowMenu(!showMenu);
+  const [displayMenu, setDisplayMenu] = useState(false);
+  const toggle = () => setDisplayMenu(!displayMenu);
 
   return (
     <>
@@ -23,15 +23,15 @@ export default function NavBar() {
       </nav>
       <main
         onClick={toggle}
-        className={showMenu ? "NavBar-menu" : "NavBar-menu hide"}
+        className={displayMenu ? "NavBar-menu" : "NavBar-menu hide"}
       >
         <MenuLink linkto="/" text="Home" icon="fahome" />
         <MenuLink
-          linkto="/manage/tv-shows"
-          text="Manage TV Shows"
+          linkto="/manage/movies"
+          text="Manage Movies"
           icon="fadesktop"
         />
-        <MenuLink linkto="/admin/tv-shows" text="Admin" icon="admin" />
+        <MenuLink linkto="/admin/movies" text="Admin" icon="admin" />
       </main>
     </>
   );

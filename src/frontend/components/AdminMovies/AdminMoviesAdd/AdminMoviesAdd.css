@@ -1,20 +1,20 @@
-.AdminShowsAdd {
+.AdminMoviesAdd {
     padding-top: 15vh;
     height: 100vh;
 }
 
-.AdminShowsAdd h2{
+.AdminMoviesAdd h2{
     color: white;
     font-size: 2rem;
     text-align: center;
 }
-.AdminShowsAdd-container {
+.AdminMoviesAdd-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.AdminShowsAdd-form {
+.AdminMoviesAdd-form {
     margin: auto;
     display: flex;
     width: 70%;
@@ -22,16 +22,16 @@
     justify-content: center;
 }
 
-.AdminShowsAdd-form input {
+.AdminMoviesAdd-form input {
     height: 40px;
 }
 
-.AdminShowsAdd-form textarea {
+.AdminMoviesAdd-form textarea {
     height: 150px;
     margin: 10px 0;
 }
 
-.AdminShowsAdd-form button {
+.AdminMoviesAdd-form button {
     background-color: #ffa500;
     border: none;
     height: 50px;
@@ -42,7 +42,7 @@
     border-radius: 15px;
 }
 
-.AdminShowsAdd-form button:hover {
+.AdminMoviesAdd-form button:hover {
     background-color: #fac564;
     
 }
