@@ -1,6 +1,13 @@
 .AdminMoviesAdd {
-    padding-top: 15vh;
+    padding-top: 5vh;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.AdminMoviesAdd-container{
+    margin: auto;
+
 }
 
 .AdminMoviesAdd h2 {
@@ -9,7 +16,7 @@
     text-align: center;
 }
 
-.AdminMoviesAdd-container {
+.AdminMoviesAdd-form-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -18,20 +25,20 @@
 .AdminMoviesAdd-form {
     margin: auto;
     display: flex;
-    width: 70%;
+    width: 450px;
     flex-direction: column;
     justify-content: center;
 }
 
 .AdminMoviesAdd-form textarea {
     height: 150px;
-    margin: 10px 0;
 }
 
 .AdminMoviesAdd-form input, .AdminMoviesAdd-form textarea {
     border-radius: 5px;
     border: none;
-    padding: 2%;
+    padding: 4%;
+    margin-bottom: 20px;
 }
 
 .AdminMoviesAdd-form button {
@@ -44,6 +51,8 @@
     transition: 1s linear;
     border-radius: 5px;
     cursor: pointer;
+    font-weight: bolder;
+
 }
 
 .AdminMoviesAdd-form button:hover {
@@ -51,16 +60,20 @@
 }
 
 .AdminMoviesAdd-form .inputFile {
-    padding: 5px 10px;
-    background: #4cb868;
-    width: 60%;
-    margin: auto;
+    padding: 4%;
+    background: #000000;
+    border: 1px solid white;
     position: relative;
     color: #fff;
     border-radius: 5px;
     text-align: center;
     cursor: pointer;
-    margin-bottom: 2%;
+    font-size: 0.8rem;
+    transition: all 1s;
+}
+
+.AdminMoviesAdd-form .inputFile:hover{
+background-color: rgba(0, 0, 0, 0.651);
 }
 
 .inputFile input {
@@ -70,4 +83,13 @@
     right: 0;
     top: 0;
     height: 100%;
+}
+
+@media screen and (max-width:500px) {
+    .AdminMoviesAdd h2 {
+    font-size: 1.5rem;
+    }
+    .AdminMoviesAdd-form {
+        width: 220px;
+    }
 }

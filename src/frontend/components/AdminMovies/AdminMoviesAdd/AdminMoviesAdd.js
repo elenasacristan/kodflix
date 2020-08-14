@@ -52,39 +52,38 @@ export default function AdminMoviesAdd() {
 
   return (
     <div className="AdminMoviesAdd">
-      <h2>Add a new movie</h2>
-      <div className="AdminMoviesAdd-container">
-        <form onSubmit={handleSubmit} className="AdminMoviesAdd-form">
-          <input
-            onChange={handleTitle}
-            type="text"
-            name="title"
-            value={title}
-            placeholder="Enter the movie title"
-          />
-          <textarea
-            onChange={handleSynopsis}
-            name="synopsis"
-            value={synopsis}
-            placeholder="Add here the movie synopsis..."
-          />
-          <div className="inputFile">
-          Choose Cover File
+      <div class="AdminMoviesAdd-container">
+        <h2>Add a new movie</h2>
+        <div className="AdminMoviesAdd-form-container">
+          <form onSubmit={handleSubmit} className="AdminMoviesAdd-form">
             <input
-              type="file"
-              name="file"
-              onChange={fileChangedHandler}
+              onChange={handleTitle}
+              type="text"
+              name="title"
+              value={title}
+              placeholder="Enter the movie title"
             />
-          </div>
-          <input
-            onChange={handleVideoId}
-            type="text"
-            name="videoId"
-            value={videoId}
-            placeholder="Enter the YouTube video Id"
-          />
-          <button type="submit">Add</button>
-        </form>
+            <textarea
+              onChange={handleSynopsis}
+              name="synopsis"
+              value={synopsis}
+              placeholder="Add here the movie synopsis..."
+            />
+
+            <input
+              onChange={handleVideoId}
+              type="text"
+              name="videoId"
+              value={videoId}
+              placeholder="Enter the YouTube video Id"
+            />
+            <div className="inputFile">
+              Choose Cover File
+              <input type="file" name="file" onChange={fileChangedHandler} />
+            </div>
+            <button type="submit">Add Movie</button>
+          </form>
+        </div>
       </div>
     </div>
   );
