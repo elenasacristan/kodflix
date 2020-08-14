@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useHistory } from 'react-router-dom';
 import "./AdminMoviesAdd.css";
 
 export default function AdminMoviesAdd() {
@@ -21,10 +22,12 @@ export default function AdminMoviesAdd() {
     setFile(e.target.files[0]);
     console.log(e.target.files[0]);
   };
+  
+  const history = useHistory();
 
   const handleSubmit = (e) => {
-    e.preventDefault();
 
+    e.preventDefault();
     const formData = new FormData();
     const formDataImg = new FormData();
 
@@ -44,6 +47,8 @@ export default function AdminMoviesAdd() {
       method: "POST",
       body: formDataImg,
     });
+
+    history.push('/')
   };
 
   return (
