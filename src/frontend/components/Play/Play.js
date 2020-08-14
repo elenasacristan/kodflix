@@ -8,7 +8,7 @@ export default function Play({ match }) {
   const [resultsLoaded, setResultsLoaded] = useState(false);
 
   useEffect(() => {
-    fetch(`/rest/shows/${match.params.Movie}`)
+    fetch(`/rest/movies/${match.params.Movie}`)
       .then((response) => response.json())
       .then((data) => {
         setMovie(data);
