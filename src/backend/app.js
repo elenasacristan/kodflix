@@ -1,72 +1,50 @@
 const express = require("express");
-const cors = require("cors");
 const app = express();
+const cors = require("cors");
+const mongoose = require("mongoose");
 const port = process.env.PORT || 3001;
 const path = require("path");
-const db = require("./db");
-var multer = require("multer");
+// const db = require("./db");
+// var multer = require("multer");
 
-db.connect().then((dob) => {
-  app.use(cors());
+app.use(cors());
 
-  app.get("/rest/shows", (req, res) => {
-    dob
-      .collection("movies")
-      .find({})
-      .toArray((err, results) => {
-        if (err) throw err;
-        res.send(results);
-      });
-  });
-
-  app.get("/rest/shows/:show", (req, res) => {
-    dob
-      .collection("movies")
-      .findOne({ title: req.params.show }, function (err, result) {
-        if (err) throw err;
-        res.send(result);
-      });
-  });
-
-  var storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-      cb(null, "build/static/media");
-      cb(null, "src/frontend/common/images");
-      cb(null, "src/frontend/common/images/wallpapers");
-
-    },
-    filename: function (req, file, cb) {
-      cb(null, file.originalname + '.jpg');
-    },
-  });
-
-  var upload = multer({ storage: storage }).single("file");
-
-  app.post("/rest/shows/upload", upload, (req, res) => {
-    upload(req, res, function (err) {
-      if (err instanceof multer.MulterError) {
-        return res.status(500).json(err);
-      } else if (err) {
-        return res.status(500).json(err);
-      }
-      return res.status(200).send(req.file);
+const movieSchema = new mongoose.Schema({
+      id: String,
+      title: String,
+      synopsis: String,
+      videoId: String,
     });
-  });
 
-  upload = multer();
+    // We create the TvShow model and the collection tvShows
+    const Movie = mongoose.model("Movie", movieSchema);
 
-  app.post("/rest/shows/add", upload.none(), (req, res) => {
-    dob.collection("movies").insertOne({ title : req.body.title, synopsis : req.body.synopsis, videoId : req.body.videoId })
-  });
+//if the db doesn't exist it will be generated
+mongoose
+  .connect("mongodb://localhost:27017/kodflix", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => {
+   
+    app.get("/rest/movies", async(req, res) => {
+      const movies = await Movie.find();
+      res.send(movies);
+    });
 
+    app.get("/rest/shows/:show", async(req, res) => {
+      const movie = await Movie.findOne({ title: req.params.show });
+      res.send(movie);
+    });
 
-  app.use(express.static(path.join(__dirname, "../../build")));
+    app.use(express.static(path.join(__dirname, "../../build")));
 
-  app.get("*", function (req, res) {
-    res.sendFile(path.join(__dirname, "../../build/index.html"));
-  });
+    app.get("*", function (req, res) {
+      res.sendFile(path.join(__dirname, "../../build/index.html"));
+    });
 
-  app.listen(port, () =>
-    console.log(`Example app listening at http://localhost:${port}`)
-  );
-});
+    app.listen(port, () =>
+      console.log(`Example app listening at http://localhost:${port}`)
+    );
+  })
+  .catch(() => {console.log('Database connection failed!')});

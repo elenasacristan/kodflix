@@ -11,7 +11,7 @@ export default function GalleryShows() {
 
   useEffect(() => {
     Aos.init({ duration: 2000 });
-    fetch("/rest/shows", {
+    fetch("/rest/movies", {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
