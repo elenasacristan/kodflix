@@ -32,6 +32,7 @@ const movieSchema = new mongoose.Schema({
 
 // We create the TvShow model and the collection tvShows
 const Movie = mongoose.model("Movie", movieSchema);
+mongoose.set('useFindAndModify', false);
 
 //if the db doesn't exist it will be generated
 mongoose
@@ -66,7 +67,7 @@ mongoose
           };
           return fileInfo;
         } else {
-          console.log('Wrong image fotmat!')
+          console.log("Wrong image fotmat!");
           return null;
         }
       },
@@ -85,12 +86,38 @@ mongoose
       movie.save();
     });
 
+    app.put("/rest/edit/:id", upload.none(), (req, res) => {
+      Movie.findByIdAndUpdate(req.params.id, {
+        $set: req.body
+      }, (error, data) => {
+        if (error) {
+          return next(error);
+          console.log(error)
+        } else {
+          res.json(data)
+          console.log('Student updated successfully !')
+        }
+      })
+    });
+
+    app.delete("/rest/delete/:id", (req, res) => {
+      Movie.findByIdAndRemove(req.params.id, (error, data) => {
+        if (error) {
+          return next(error);
+        } else {
+          res.status(200).json({
+            msg: data
+          })
+        }
+      })
+    });
+
     upload = multer({ storage });
 
     //Upload movie cover
     app.post("/upload", upload.single("file"), (req, res) => {
       console.log("file uploaded!");
-      res.redirect('/');
+      res.redirect("/");
     });
 
     let gfs = new mongoose.mongo.GridFSBucket(mongoose.connection.db, {

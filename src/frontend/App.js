@@ -35,7 +35,7 @@ function App() {
           <Route exact path="/manage/movies" component={ManageMovies} />
           <Route exact path="/admin/movies/list" component={AdminMoviesList} />
           <Route exact path="/admin/movies/add" component={AdminMoviesAdd} />
-          <Route exact path="/admin/movies/edit" component={AdminMoviesEdit} />
+          <Route exact path="/admin/movies/edit/:movieId" component={AdminMoviesEdit} />
           <Route exact path="/admin/movies" component={AdminMovies} />
           <Route exact path="/:Movie/play" component={Play} />
           <Route exact path="/:Movie" component={Details} />

@@ -1,10 +1,20 @@
 import React, { useEffect, useState } from "react";
 import "./AdminMoviesList.css";
 import Spinner from "../../Spiner/Spiner";
+import { Link, useHistory } from "react-router-dom";
 
 export default function AdminMoviesList() {
   const [shows, setShows] = useState([]);
   const [resultsLoaded, setResultsLoaded] = useState(false);
+
+  const history = useHistory();
+
+  const deleteShow = (id) => {
+    fetch(`/rest/delete/${id}`, {
+      method: "DELETE",
+    });
+    history.push(`/`);
+  }
 
   useEffect(() => {
     fetch("/rest/movies", {
@@ -28,9 +38,11 @@ export default function AdminMoviesList() {
         <h2>Admin area</h2>
         <div className="AdminMoviesList-container">
           {shows.map((tvShow) => (
-            <p className="AdminMoviesList-title" key={tvShow.id}>
-              {tvShow.title.split("_").join(" ")}
-            </p>
+            <div className="AdminMoviesList-title" key={tvShow._id}>
+              <p>{tvShow.title.split("_").join(" ")}</p>
+              <Link to={`/admin/movies/edit/${tvShow.title}`}>Edit</Link>
+              <button onClick={() => deleteShow(tvShow._id)}>Delete</button>
+            </div>
           ))}
         </div>
       </div>
