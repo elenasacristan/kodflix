@@ -42,7 +42,7 @@ export default function AdminMoviesList() {
     return (
       <div className="AdminMoviesList">
         <div className="AdminMovies-wrapper">
-        <h3>Manage movies</h3>
+        <h2>Manage movies</h2>
           <div className="AdminMoviesList-container">
             {shows.map((tvShow) => (
               <div className="AdminMoviesList-title" key={tvShow._id}>
