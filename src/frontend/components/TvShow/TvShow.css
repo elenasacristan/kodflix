@@ -8,9 +8,7 @@
   border: none;
 }
 
-.TvShow-item:hover {
-  box-shadow: 2px 2px 1px #fff;
-}
+
 
 .TvShow img {
   width: 100%;

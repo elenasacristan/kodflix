@@ -1,6 +1,9 @@
 .AdminMoviesList {
-  padding-top: 10vh;
   height: 100vh;
+}
+
+.AdminMovies-wrapper {
+  padding-top: 18vh;
 }
 
 .AdminMoviesList-container {
@@ -15,6 +18,11 @@
   justify-content: start;
 }
 
+.AdminMoviesList h3 {
+  color: white;
+  text-align: center;
+  font-size:2rem;
+}
 .AdminMoviesList-title {
   color: white;
   padding: 0 10%;
@@ -25,11 +33,10 @@
   flex: 3;
 }
 
-
 .AdminMoviesList .icon {
-color:white;
-font-size:1.5rem;
-padding:10px;
+  color: white;
+  font-size: 1.5rem;
+  padding: 10px;
 }
 
 .AdminMoviesList-title button {
@@ -40,17 +47,14 @@ padding:10px;
 .AdminMoviesList-title a {
   text-decoration: none;
   padding-top: 3px;
-
 }
 
-
-
-.AdminMoviesList-title button .icon{
-    color: rgb(250, 100, 100);
+.AdminMoviesList-title button .icon {
+  color: rgb(250, 100, 100);
 }
 
-.AdminMoviesList-title a .icon{
-    color: orange;
+.AdminMoviesList-title a .icon {
+  color: orange;
 }
 /* .AdminMoviesList-title button,
 .AdminMoviesList-title a {

@@ -6,8 +6,6 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Details from "./components/Details/Details.js";
 import NotFound from "./components/NotFound/NotFound.js";
 import NavBar from "./components/NavBar/NavBar.js";
-import ManageMovies from "./components/ManageMovies/ManageMovies.js";
-import AdminMovies from "./components/AdminMovies/AdminMovies.js";
 import Play from "./components/Play/Play.js";
 import AdminMoviesList from "./components/AdminMovies/AdminMoviesList/AdminMoviesList.js";
 import AdminMoviesAdd from "./components/AdminMovies/AdminMoviesAdd/AdminMoviesAdd.js";
@@ -32,11 +30,9 @@ function App() {
         <Switch>
           <Route exact path="/" component={GalleryMovies} />
           <Route exact path="/not-found" component={NotFound} />
-          <Route exact path="/manage/movies" component={ManageMovies} />
           <Route exact path="/admin/movies/list" component={AdminMoviesList} />
           <Route exact path="/admin/movies/add" component={AdminMoviesAdd} />
           <Route exact path="/admin/movies/edit/:movieId" component={AdminMoviesEdit} />
-          <Route exact path="/admin/movies" component={AdminMovies} />
           <Route exact path="/:Movie/play" component={Play} />
           <Route exact path="/:Movie" component={Details} />
         </Switch>

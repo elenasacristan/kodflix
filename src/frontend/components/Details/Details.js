@@ -35,23 +35,24 @@ export default function Details({ match }) {
     return <Spinner />;
   } else {
     return (
-      <div
-        className="Details"
-        style={{
-          background: `url('covers/${movie.title}')`,
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundPositionX: "center",
-          backgroundPositionY: "center",
-        }}
-      >
-        <div className="Details-overlay">
-          <h2 className="heading">{movie.title.split("_").join(" ")}</h2>
-          <div className="Details-container">
+      <div className="Details">
+        <div
+          className="Details-container"
+          style={{
+            background: `url('covers/${movie.title}')`,
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
+          }}
+        >
+          <div className="Details-overlay">
+            <h2 className="heading">{movie.title.split("_").join(" ")}</h2>
             <p className="Details-synopsis">{movie.synopsis}</p>
+
+            <PlayButton showTitle={movie.title} />
           </div>
-          <PlayButton showTitle={movie.title}/>
         </div>
       </div>
     );

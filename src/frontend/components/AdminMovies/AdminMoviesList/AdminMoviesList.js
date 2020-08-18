@@ -41,19 +41,21 @@ export default function AdminMoviesList() {
   } else {
     return (
       <div className="AdminMoviesList">
-        <h2>Admin area</h2>
-        <div className="AdminMoviesList-container">
-          {shows.map((tvShow) => (
-            <div className="AdminMoviesList-title" key={tvShow._id}>
-              <p>{tvShow.title.split("_").join(" ")}</p>
-              <Link to={`/admin/movies/edit/${tvShow.title}`}>
-                <FaEdit className="icon"/>
-              </Link>
-              <button onClick={() => deleteShow(tvShow._id)}>
-                <FaTrashAlt className="icon"/>
-              </button>
-            </div>
-          ))}
+        <div className="AdminMovies-wrapper">
+        <h3>Manage movies</h3>
+          <div className="AdminMoviesList-container">
+            {shows.map((tvShow) => (
+              <div className="AdminMoviesList-title" key={tvShow._id}>
+                <p>{tvShow.title.split("_").join(" ")}</p>
+                <Link to={`/admin/movies/edit/${tvShow.title}`}>
+                  <FaEdit className="icon" />
+                </Link>
+                <button onClick={() => deleteShow(tvShow._id)}>
+                  <FaTrashAlt className="icon" />
+                </button>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     );

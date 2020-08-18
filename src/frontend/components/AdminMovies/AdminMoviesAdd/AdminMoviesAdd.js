@@ -53,7 +53,7 @@ export default function AdminMoviesAdd() {
   return (
     <div className="AdminMoviesAdd">
       <div class="AdminMoviesAdd-container">
-        <h2>Add a new movie</h2>
+        <h2>Add movie</h2>
         <div className="AdminMoviesAdd-form-container">
           <form onSubmit={handleSubmit} className="AdminMoviesAdd-form">
             <input
@@ -62,12 +62,14 @@ export default function AdminMoviesAdd() {
               name="title"
               value={title}
               placeholder="Enter the movie title"
+              required
             />
             <textarea
               onChange={handleSynopsis}
               name="synopsis"
               value={synopsis}
               placeholder="Add here the movie synopsis..."
+              required
             />
             <input
               onChange={handleVideoId}
@@ -75,10 +77,16 @@ export default function AdminMoviesAdd() {
               name="videoId"
               value={videoId}
               placeholder="Enter the YouTube video Id"
+              required
             />
             <div className="inputFile">
               Choose Cover File
-              <input type="file" name="file" onChange={fileChangedHandler} />
+              <input
+                type="file"
+                name="file"
+                onChange={fileChangedHandler}
+                required
+              />
             </div>
             <button type="submit">Add Movie</button>
           </form>

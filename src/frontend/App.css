@@ -1,16 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Comic+Neue&family=Permanent+Marker&display=swap");
 body {
   font-family: "Comic Neue", cursive;
-  background: conic-gradient( rgb(0, 0, 0) 0 20%, rgb(49, 100, 134) 0 70%, rgb(0, 0, 0) 0);
+  background: linear-gradient(90deg, rgb(167 167 167) 0%, rgb(0 0 0) 100%);
 }
-
 
 #root {
   height: 100%;
 }
 
-.App{
+.App {
   height: 100%;
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 2px;
+  word-spacing: 3px;
 }
 
 .heading {

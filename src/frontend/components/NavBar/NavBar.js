@@ -27,11 +27,11 @@ export default function NavBar() {
       >
         <MenuLink linkto="/" text="Home" icon="fahome" />
         <MenuLink
-          linkto="/manage/movies"
+          linkto="/admin/movies/list"
           text="Manage Movies"
-          icon="fadesktop"
+          icon="admin"
         />
-        <MenuLink linkto="/admin/movies" text="Admin" icon="admin" />
+        <MenuLink linkto="/admin/movies/add" text="Add movie" icon="fadesktop" />
       </main>
     </>
   );

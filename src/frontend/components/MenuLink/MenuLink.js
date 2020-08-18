@@ -10,7 +10,6 @@ export default function MenuLink({ linkto, text, icon }) {
       {icon === "fadesktop" && <FaDesktop className="sidebar-icon" />}
       {icon === "fahome" && <FaHome className="sidebar-icon" />}
       {icon === "admin" && <AiFillSetting className="sidebar-icon" />}
-
       <span className="MenuLink-text">{text}</span>
     </Link>
   );
