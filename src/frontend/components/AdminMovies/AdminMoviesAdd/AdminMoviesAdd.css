@@ -1,94 +1,94 @@
 .AdminMoviesAdd {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-.AdminMoviesAdd-container{
-    margin: auto;
-
+.AdminMoviesAdd-container {
+  margin: auto;
+  padding-top: 12vh;
 }
 
 .AdminMoviesAdd h2 {
-    color: white;
-    font-size: 2rem;
-    text-align: center;
+  color: white;
+  font-size: 2rem;
+  text-align: center;
 }
 
 .AdminMoviesAdd-form-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .AdminMoviesAdd-form {
-    margin: auto;
-    display: flex;
-    width: 450px;
-    flex-direction: column;
-    justify-content: center;
+  margin: auto;
+  display: flex;
+  width: 450px;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .AdminMoviesAdd-form textarea {
-    height: 150px;
+  height: 150px;
 }
 
-.AdminMoviesAdd-form input, .AdminMoviesAdd-form textarea {
-    border-radius: 5px;
-    border: none;
-    padding: 4%;
-    margin-bottom: 20px;
+.AdminMoviesAdd-form input,
+.AdminMoviesAdd-form textarea {
+  border-radius: 5px;
+  border: none;
+  padding: 4%;
+  margin-bottom: 20px;
 }
 
 .AdminMoviesAdd-form button {
-    background-color: #ffa500;
-    border: none;
-    height: 50px;
-    width: 35%;
-    text-align: center;
-    margin: 25px auto;
-    transition: 1s linear;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bolder;
-
+  background-color: #ffa500;
+  border: none;
+  height: 50px;
+  width: 35%;
+  text-align: center;
+  margin: 25px auto;
+  transition: 1s linear;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bolder;
 }
 
 .AdminMoviesAdd-form button:hover {
-    background-color: #fac564;
+  background-color: #fac564;
 }
 
 .AdminMoviesAdd-form .inputFile {
-    padding: 4%;
-    background: #000000;
-    border: 1px solid white;
-    position: relative;
-    color: #fff;
-    border-radius: 5px;
-    text-align: center;
-    cursor: pointer;
-    font-size: 0.8rem;
-    transition: all 1s;
+  padding: 4%;
+  background: #000000;
+  border: 1px solid white;
+  position: relative;
+  color: #fff;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: all 1s;
 }
 
-.AdminMoviesAdd-form .inputFile:hover{
-background-color: rgba(0, 0, 0, 0.651);
+.AdminMoviesAdd-form .inputFile:hover {
+  background-color: rgba(0, 0, 0, 0.651);
 }
 
 .inputFile input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    right: 0;
-    top: 0;
-    height: 100%;
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  right: 0;
+  top: 0;
+  height: 100%;
 }
 
-@media screen and (max-width:500px) {
-    .AdminMoviesAdd h2 {
+@media screen and (max-width: 500px) {
+  .AdminMoviesAdd h2 {
     font-size: 1.5rem;
-    }
-    .AdminMoviesAdd-form {
-        width: 220px;
-    }
+  }
+  .AdminMoviesAdd-form {
+    width: 220px;
+  }
 }

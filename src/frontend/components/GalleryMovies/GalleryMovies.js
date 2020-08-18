@@ -42,8 +42,6 @@ export default function GalleryMovies() {
                 id={tvShow.id}
                 title={tvShow.title}
                 picture={tvShow.title}
-
-                // picture={require(`../../common/images/${tvShow.title}.jpg`)}
               />
             </div>
           ))}
