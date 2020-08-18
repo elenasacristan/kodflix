@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./AdminMoviesList.css";
 import Spinner from "../../Spiner/Spiner";
 import { Link, useHistory } from "react-router-dom";
+import { FaEdit, FaTrashAlt } from "react-icons/fa";
 
 export default function AdminMoviesList() {
   const [shows, setShows] = useState([]);
@@ -13,8 +14,13 @@ export default function AdminMoviesList() {
     fetch(`/rest/delete/${id}`, {
       method: "DELETE",
     });
+
+    // fetch(`/file/delete/${title.split(" ").join("_")}`, {
+    //   method: "DELETE",
+    // });
+
     history.push(`/`);
-  }
+  };
 
   useEffect(() => {
     fetch("/rest/movies", {
@@ -40,8 +46,12 @@ export default function AdminMoviesList() {
           {shows.map((tvShow) => (
             <div className="AdminMoviesList-title" key={tvShow._id}>
               <p>{tvShow.title.split("_").join(" ")}</p>
-              <Link to={`/admin/movies/edit/${tvShow.title}`}>Edit</Link>
-              <button onClick={() => deleteShow(tvShow._id)}>Delete</button>
+              <Link to={`/admin/movies/edit/${tvShow.title}`}>
+                <FaEdit className="icon"/>
+              </Link>
+              <button onClick={() => deleteShow(tvShow._id)}>
+                <FaTrashAlt className="icon"/>
+              </button>
             </div>
           ))}
         </div>

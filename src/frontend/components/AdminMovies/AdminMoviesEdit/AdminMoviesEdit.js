@@ -1,11 +1,10 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import "./AdminMoviesEdit.css";
 import Spinner from "../../Spiner/Spiner";
 import { Redirect } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 
-  
-export default function AdminMoviesEdit({match}) {
+export default function AdminMoviesEdit({ match }) {
   const [movie, setMovie] = useState({});
   const [resultsLoaded, setResultsLoaded] = useState(false);
   const [title, setTitle] = useState("");
@@ -20,8 +19,7 @@ export default function AdminMoviesEdit({match}) {
         setMovie(data);
         setResultsLoaded(true);
       });
-  }, [match.params.movieTitle]);
-
+  }, [match.params.movieId]);
 
   const handleTitle = (e) => {
     setTitle(e.target.value);
@@ -65,7 +63,6 @@ export default function AdminMoviesEdit({match}) {
     history.push(`/admin/movies/list`);
   };
 
-
   if (!movie) {
     return <Redirect to="/not-found" />;
   } else if (!resultsLoaded) {
@@ -73,41 +70,39 @@ export default function AdminMoviesEdit({match}) {
   } else {
     return (
       <div className="AdminMoviesAdd">
-      <div class="AdminMoviesAdd-container">
-        <h2>Edit movie</h2>
-        <div className="AdminMoviesAdd-form-container">
-          <form onSubmit={handleSubmit} className="AdminMoviesAdd-form">
-            <input
-              onChange={handleTitle}
-              type="text"
-              name="title"
-              value={title}
-              placeholder={movie.title}
-            />
-            <textarea
-              onChange={handleSynopsis}
-              name="synopsis"
-              value={synopsis}
-              placeholder={movie.synopsis}
-            />
-            <input
-              onChange={handleVideoId}
-              type="text"
-              name="videoId"
-              value={videoId}
-              placeholder={movie.videoId}
-            />
-            <div className="inputFile">
-              Choose Cover File
-              <input type="file" name="file" onChange={fileChangedHandler} />
-            </div>
-            <button type="submit">Update Movie</button>
-          </form>
+        <div className="AdminMoviesAdd-container">
+          <h2>Edit movie</h2>
+          <div className="AdminMoviesAdd-form-container">
+            <form onSubmit={handleSubmit} className="AdminMoviesAdd-form">
+              <input
+                onChange={handleTitle}
+                type="text"
+                name="title"
+                value={title}
+                placeholder={movie.title}
+              />
+              <textarea
+                onChange={handleSynopsis}
+                name="synopsis"
+                value={synopsis}
+                placeholder={movie.synopsis}
+              />
+              <input
+                onChange={handleVideoId}
+                type="text"
+                name="videoId"
+                value={videoId}
+                placeholder={movie.videoId}
+              />
+              <div className="inputFile">
+                Choose Cover File
+                <input type="file" name="file" onChange={fileChangedHandler} />
+              </div>
+              <button type="submit">Update Movie</button>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
     );
   }
-
- 
 }

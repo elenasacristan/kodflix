@@ -69,7 +69,6 @@ export default function AdminMoviesAdd() {
               value={synopsis}
               placeholder="Add here the movie synopsis..."
             />
-
             <input
               onChange={handleVideoId}
               type="text"

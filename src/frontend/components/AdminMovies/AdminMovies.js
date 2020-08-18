@@ -9,7 +9,6 @@ export default function AdminMovies() {
       <div className="container">
         <Link to="/admin/movies/list">List</Link>
         <Link to="/admin/movies/add">Add</Link>
-        <Link to="/admin/movies/edit">Edit</Link>
       </div>
     </div>
   );
