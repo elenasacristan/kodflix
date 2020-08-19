@@ -7,15 +7,12 @@
 }
 
 .AdminMoviesList-container {
-  background-color: rgba(0, 0, 0, 0.363);
-  border: 1px orange solid;
+  background-color: rgb(0 0 0 / 16%);
   border-radius: 15px;
-  width: 380px;
+  width: 80%;
   margin: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: left;
-  justify-content: start;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 .AdminMoviesList h2 {
@@ -52,14 +49,30 @@
   color: rgb(250, 100, 100);
 }
 
+
+.AdminMoviesList-title button .icon:hover {
+  color: rgb(218, 73, 73);
+}
+
 .AdminMoviesList-title a .icon {
   color: orange;
 }
 
-@media screen and (max-width: 600px) {
+.AdminMoviesList-title a .icon:hover {
+  color: rgb(209, 140, 10);
+}
+
+
+@media screen and (max-width: 900px) {
   .AdminMoviesList-container {
+    grid-template-columns: 1fr;
     width: 85%;
   }
+}
+
+
+@media screen and (max-width: 600px) {
+ 
   .AdminMoviesList .icon {
     font-size: 1.2rem;
     padding: 5px;
